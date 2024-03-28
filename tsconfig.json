@@ -1,15 +1,25 @@
 {
   "compilerOptions": {
-      "strict": true,
-      "jsx": "react-jsx",
-      "baseUrl": "./",
-      "paths": {
-          "@assets/*": ["./src/app/assets/*"],
-          "@components/*": ["./src/app/components/*"],
-          "@routes/*": ["./src/app/routes/*"],
-          "@screens/*": ["./src/app/screens/*"],
-          "@utils/*": ["./src/app/utils/*"]
-      }
+    "strict": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "@assets/*": [
+        "./src/app/assets/*"
+      ],
+      "@components/*": [
+        "./src/app/components/*"
+      ],
+      "@routes/*": [
+        "./src/app/routes/*"
+      ],
+      "@screens/*": [
+        "./src/app/screens/*"
+      ],
+      "@utils/*": [
+        "./src/app/utils/*"
+      ]
+    }
   },
   "extends": "expo/tsconfig.base"
 }
