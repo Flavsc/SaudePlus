@@ -56,7 +56,7 @@
       <a href="#">
         <img src="https://avatars.githubusercontent.com/u/138916786?v=4" width="200px;" alt="FotoTerencio"/><br>
         <sub>
-          <p><b><i>Terencio:</i></b> <a href="https://github.com/terenciolc"><i>terenciocl</i></a></p>
+          <p><b><i>Terencio:</i></b> <a href="https://github.com/terenciolc"><i>terenciolc</i></a></p>
         </sub>
       </a>
     </td>
