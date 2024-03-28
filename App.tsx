@@ -10,6 +10,7 @@ import SmallText from "./components/texts/SmallText";
 export default function App() {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
         <MainContainer>
@@ -33,7 +34,15 @@ export default function App() {
                 value={name}
                 onChangeText={setName}
                 placeholder="Seu Nome"
-                keyboardType="email-address"
+                style={{ marginBottom: 20 }}
+            />
+            <StyledTextInput
+                label="Senha"
+                icon="lock-open"
+                value={password}
+                onChangeText={setPassword}
+                placeholder="Sua Senha"
+                isPassword
                 style={{ marginBottom: 20 }}
             />
             <StatusBar style="auto" />
