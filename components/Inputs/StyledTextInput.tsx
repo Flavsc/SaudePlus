@@ -1,12 +1,12 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import React, { FunctionComponent } from "react";
+import React, { useState, FunctionComponent } from "react";
 import styled from "styled-components/native";
 
 import { InputProps } from "./types";
 import { colors } from "../colors";
 import SmallText from "../texts/SmallText";
 
-const { primary, secondary, accent, white, black, gray } = colors;
+const { primary, secondary, accent, white, black, gray, comp } = colors;
 
 const InputWrapper = styled.View`
     width: 100%;
@@ -29,7 +29,7 @@ const InputField = styled.TextInput`
     border-radius: 10px;
     border-color: ${secondary};
     margin-vertical: 3px;
-    margin-botton: 10px;
+    margin-bottom: 10px;
     padding: 15px;
     padding-left: 65px;
     padding-right: 55px;
@@ -42,6 +42,16 @@ const StyledTextInput: FunctionComponent<InputProps> = ({
     label,
     ...props
 }) => {
+    const [inputBackgroundColor, setInputBackgroundColor] = useState(white);
+    const customOnFocus = () => {
+        props?.onFocus;
+        setInputBackgroundColor(comp);
+    };
+    const customOnBlur = () => {
+        props?.onBlur;
+        setInputBackgroundColor(white);
+    };
+
     return (
         <InputWrapper>
             <LeftIcon>
@@ -50,8 +60,10 @@ const StyledTextInput: FunctionComponent<InputProps> = ({
             <SmallText>{label}</SmallText>
             <InputField
                 {...props}
-                placeholderTextColor={gray}
-                style={props.style}
+                placeholderTextColor={black}
+                style={[{ backgroundColor: inputBackgroundColor }, props.style]}
+                onFocus={customOnFocus}
+                onBlur={customOnBlur}
             />
         </InputWrapper>
     );

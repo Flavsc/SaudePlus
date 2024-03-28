@@ -1,3 +1,18 @@
+IGNORAR TUDO ISSO, PARA FAZER FUNCIONAR DIGITE npm i NO CONSOLE E RODE NORMALMENTE COM npx expo start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Documentação Expo -> https://docs.expo.dev
 
 Para abrir o arquivo AppSaoCamilo

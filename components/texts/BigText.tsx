@@ -4,11 +4,11 @@ import styled from "styled-components/native";
 import { TextProps } from "./types";
 import { colors } from "../colors";
 
-const { white } = colors;
+const { white, black, primary } = colors;
 
 const StyledText = styled.Text`
     font-size: 30px;
-    color: ${white};
+    color: ${primary};
     text-align: left;
 `;
 

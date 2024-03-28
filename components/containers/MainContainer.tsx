@@ -4,13 +4,13 @@ import styled from "styled-components/native";
 import { ContainerProps } from "./types";
 import { colors } from "../colors";
 
-const { primary } = colors;
+const { primary, white } = colors;
 
 const StyledView = styled.View`
     flex: 1;
-    padding: 25pc;
+    padding: 25px;
     padding-top: 40px;
-    background-color: ${primary};
+    background-color: ${white};
     justify-content: center;
     align-items: center;
 `;
