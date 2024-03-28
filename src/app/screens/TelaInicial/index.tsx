@@ -16,7 +16,7 @@ export default function App() {
                 source={require("./src/assets/logo_sao_camilo.png")}
                 style={styles.logo_sao_camilo}
             />
-            <Text style={styles.tituloGestaoSaude}>YE-Gestão E Saúde</Text>
+            <Text style={styles.tituloGestaoSaude}>Saude Plus</Text>
 
             <TouchableOpacity style={styles.btnProximo}>
                 <Text style={styles.txtBtnProximo}>Proximo</Text>
