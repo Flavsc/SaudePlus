@@ -34,7 +34,7 @@ const InputField = styled.TextInput`
     padding-left: 65px;
     padding-right: 55px;
     font-size: 16px;
-    color: ${gray};
+    color: ${black};
 `;
 
 const RightIcon = styled.TouchableOpacity`
@@ -69,7 +69,7 @@ const StyledTextInput: FunctionComponent<InputProps> = ({
             <SmallText>{label}</SmallText>
             <InputField
                 {...props}
-                placeholderTextColor={black}
+                placeholderTextColor={gray}
                 style={[{ backgroundColor: inputBackgroundColor }, props.style]}
                 onFocus={customOnFocus}
                 onBlur={customOnBlur}
