@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 
+import RegularButton from "./components/Buttons/RegularButton";
 import StyledTextInput from "./components/Inputs/StyledTextInput";
 import MainContainer from "./components/containers/MainContainer";
 import BigText from "./components/texts/BigText";
@@ -45,6 +46,15 @@ export default function App() {
                 isPassword
                 style={{ marginBottom: 20 }}
             />
+
+            <RegularButton
+                onPress={() => {
+                    alert("Continuando...");
+                }}
+            >
+                Continuar
+            </RegularButton>
+
             <StatusBar style="auto" />
         </MainContainer>
     );
