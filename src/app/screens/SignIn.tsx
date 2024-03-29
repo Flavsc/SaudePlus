@@ -1,3 +1,4 @@
+import SPlus from "@assets/images/sPlus";
 import RegularButton from "components/Buttons/RegularButton";
 import StyledTextInput from "components/Inputs/StyledTextInput";
 import MainContainer from "components/containers/MainContainer";
@@ -7,18 +8,15 @@ import SmallText from "components/texts/SmallText";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 
-export default function Cadastro() {
+export default function SignIn() {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
 
     return (
         <MainContainer>
-            <BigText>Saude Plus</BigText>
-            <RegularText>Gestão Inteligente de Saúde</RegularText>
-            <SmallText style={{ marginBottom: 20 }}>
-                Faça seu Cadastro.
-            </SmallText>
+            <SPlus />
+            <BigText style={{ marginBottom: 20 }}>Faça seu Cadastro</BigText>
             <StyledTextInput
                 label="E-mail"
                 icon="email-variant"
