@@ -3,8 +3,6 @@ import RegularButton from "components/Buttons/RegularButton";
 import StyledTextInput from "components/Inputs/StyledTextInput";
 import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
-import RegularText from "components/texts/RegularText";
-import SmallText from "components/texts/SmallText";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 

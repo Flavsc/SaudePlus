@@ -1,4 +1,3 @@
-import MainContainer from "components/containers/MainContainer";
 import { Image } from "react-native";
 
 export default function SPlus() {
