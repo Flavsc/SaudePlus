@@ -1,4 +1,4 @@
-import MainPage from "@screens/MainPage";
+import InitialPage from "@screens/InitialPage";
 import SignIn from "@screens/SignIn";
 import MainContainer from "components/containers/MainContainer";
 import { useFonts } from "expo-font";

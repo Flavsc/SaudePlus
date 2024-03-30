@@ -1,17 +1,22 @@
 import SPlus from "@assets/images/sPlus";
+import { NavigationContainer } from "@react-navigation/native"; // Importe NavigationContainer
+import { createStackNavigator } from "@react-navigation/stack"; // Importe createStackNavigator
 import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
-import type { PropsWithChildren } from "react";
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet } from "react-native";
 
-export default function MainPage() {
+const Stack = createStackNavigator(); // Crie uma pilha de navegação
+
+export default function InitialPage() {
     return (
         <MainContainer>
             <SPlus />
-            <BigText>Saude Plus</BigText>
-            <RegularText>Gestão Inteligente de Saúde</RegularText>
+            <BigText style={{ marginBottom: 10 }}>Saude Plus</BigText>
+            <RegularText style={{ marginBottom: 20 }}>
+                Gestão Inteligente de Saúde
+            </RegularText>
         </MainContainer>
     );
 }
