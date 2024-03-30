@@ -12,15 +12,15 @@ export default function TextGrid() {
         <SmallContainer>
             <GridView
                 data={[
-                    { name: "func1", id: 1 },
-                    { name: "func2", id: 2 },
-                    { name: "func3", id: 3 },
-                    { name: "func4", id: 4 },
-                    { name: "func5", id: 5 },
-                    { name: "func6", id: 6 },
-                    { name: "func7", id: 7 },
-                    { name: "func8", id: 8 },
-                    { name: "func9", id: 9 }
+                    { name: "text1", id: 1 },
+                    { name: "text2", id: 2 },
+                    { name: "text3", id: 3 },
+                    { name: "text4", id: 4 },
+                    { name: "text5", id: 5 },
+                    { name: "text6", id: 6 },
+                    { name: "text7", id: 7 },
+                    { name: "text8", id: 8 },
+                    { name: "text9", id: 9 }
                 ]}
                 renderItem={(item) => (
                     <View style={styles.itemContainer}>
@@ -38,11 +38,11 @@ const styles = StyleSheet.create({
     itemContainer: {
         height: 80,
         width: 80,
-        backgroundColor: accent,
+        backgroundColor: white,
         borderRadius: 15,
         marginBottom: 10,
         justifyContent: "center",
         alignItems: "center"
     },
-    title: { color: white, fontSize: 25 }
+    title: { color: accent, fontSize: 25 }
 });

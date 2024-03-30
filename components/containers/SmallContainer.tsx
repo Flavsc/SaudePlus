@@ -8,9 +8,10 @@ const { primary, white } = colors;
 
 const StyledView = styled.View`
     flex: 1;
-    background-color: ${white};
+    background-color: ${primary};
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
 `;
 
 const SmallContainer: FunctionComponent<ContainerProps> = (props) => {
