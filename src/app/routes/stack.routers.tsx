@@ -1,21 +1,23 @@
-import { NavigationContainer, StackRouter } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import CameraTest from "@screens/CameraTest";
+import InitialPage from "@screens/InitialPage";
+import MainPage from "@screens/MainPage";
+import SignIn from "@screens/SignIn";
+import SignUp from "@screens/SignUp";
+import TGT from "@screens/TextGridTest";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
-// export default function Routers(){
-//     return(
-//         <NavigationContainer>
-//             <Stack.Navigator>
-//                 {/* feito para telas que formos add */}
-//                 <Stack.Screen name="#" component={"#"}/>
-//                 <Stack.Screen name="#" component={"#"}/>
-//                 <Stack.Screen name="#" component={"#"}/>
-//                 <Stack.Screen name="#" component={"#"}/>
-//                 <Stack.Screen name="#" component={"#"}/>
-//                 <Stack.Screen name="#" component={"#"}/>
-//             </Stack.Navigator>
-//         </NavigationContainer>
-//     );
-// }
-// descomentar tudo e colocar em "name"e e "component" os mesmos nomes - necessario importar os arquivos que forem ser as páginas
+export default function Nav() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name=" " component={InitialPage} />
+                <Stack.Screen name="Login" component={SignIn} />
+                <Stack.Screen name="Cadastro" component={SignUp} />
+                <Stack.Screen name="Main" component={MainPage} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}

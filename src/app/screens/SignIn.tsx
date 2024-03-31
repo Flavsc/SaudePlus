@@ -36,9 +36,7 @@ export default function SignIn({ navigation }: { navigation: any }) {
 
             <RegularButton
                 style={{ marginBottom: 20 }}
-                onPress={() => {
-                    alert("Logando...");
-                }}
+                onPress={() => navigation.navigate("Main")}
             >
                 Logar
             </RegularButton>

@@ -1,0 +1,11 @@
+Acabou de abrir o arquivo?
+
+Primeiro, digite o comando abaixo no terminal:
+
+npm i
+
+Segundo, abra o servidor expo com o comando:
+
+npx expo start
+
+Terceiro, abra seu celular ou emulador e programe!
