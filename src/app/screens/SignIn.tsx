@@ -6,7 +6,7 @@ import BigText from "components/texts/BigText";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 
-export default function SignIn() {
+export default function SignIn({ navigation }: { navigation: any }) {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
@@ -45,9 +45,7 @@ export default function SignIn() {
 
             <RegularButton
                 style={{ marginBottom: 20 }}
-                onPress={() => {
-                    alert("Indo para Cadastro...");
-                }}
+                onPress={() => navigation.navigate("Cadastro")}
             >
                 Faça Cadastro
             </RegularButton>
