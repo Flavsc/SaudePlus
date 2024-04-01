@@ -6,7 +6,8 @@ import { InputProps } from "./types";
 import { colors } from "../colors";
 import SmallText from "../texts/SmallText";
 
-const { primary, secondary, accent, white, black, gray, comp } = colors;
+const { primary, secondary, accent, white, black, gray, comp, inputback } =
+    colors;
 
 const InputWrapper = styled.View`
     width: 100%;
@@ -54,7 +55,7 @@ const StyledTextInput: FunctionComponent<InputProps> = ({
     const [hidePassword, setHidePassword] = useState(true);
     const customOnFocus = () => {
         props?.onFocus;
-        setInputBackgroundColor(comp);
+        setInputBackgroundColor(inputback);
     };
     const customOnBlur = () => {
         props?.onBlur;

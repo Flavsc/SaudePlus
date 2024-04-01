@@ -6,7 +6,8 @@ export const colors = {
     black: "#000000",
     white: "#FFFFFF",
     gray: "#626F68",
-    red_gray: "#3C282A"
+    red_gray: "#3C282A",
+    inputback: "#E4FFF7"
 };
 
 //aplicativo em vermelho.
