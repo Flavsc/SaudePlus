@@ -5,10 +5,10 @@ import { ButtonProps } from "./types";
 import { colors } from "../colors";
 import RegularText from "../texts/RegularText";
 
-const { primary, accent, white } = colors;
+const { primary, accent, white, secondary } = colors;
 
 const ButtonView = styled.TouchableOpacity`
-    background-color: ${accent};
+    background-color: ${secondary};
     width: 100%;
     height: 60px;
     padding: 15px;
