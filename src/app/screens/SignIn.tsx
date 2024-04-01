@@ -1,10 +1,15 @@
 import SPlus from "@assets/images/sPlus";
+import FakeButton from "components/Buttons/FakeButton";
 import RegularButton from "components/Buttons/RegularButton";
 import StyledTextInput from "components/Inputs/StyledTextInput";
+import { colors } from "components/colors";
 import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
+import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
+
+const { primary, accent, white } = colors;
 
 export default function SignIn({ navigation }: { navigation: any }) {
     const [email, setEmail] = useState("");
@@ -31,9 +36,14 @@ export default function SignIn({ navigation }: { navigation: any }) {
                 onChangeText={setPassword}
                 placeholder="Sua Senha"
                 isPassword
-                style={{ marginBottom: 20 }}
+                style={{ marginBottom: 5 }}
             />
-
+            <FakeButton
+                style={{ backgroundColor: white, marginBottom: 5 }}
+                onPress={() => navigation.navigate("PasswordForget")}
+            >
+                Esqueci minha senha
+            </FakeButton>
             <RegularButton
                 style={{ marginBottom: 20 }}
                 onPress={() => navigation.navigate("Main")}

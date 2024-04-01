@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import CameraTest from "@screens/CameraTest";
 import InitialPage from "@screens/InitialPage";
 import MainPage from "@screens/MainPage";
+import PasswordForget from "@screens/PasswordForget";
 import SignIn from "@screens/SignIn";
 import SignUp from "@screens/SignUp";
 import TGT from "@screens/TextGridTest";
@@ -17,6 +18,10 @@ export default function Nav() {
                 <Stack.Screen name="Login" component={SignIn} />
                 <Stack.Screen name="Cadastro" component={SignUp} />
                 <Stack.Screen name="Main" component={MainPage} />
+                <Stack.Screen
+                    name="PasswordForget"
+                    component={PasswordForget}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );
