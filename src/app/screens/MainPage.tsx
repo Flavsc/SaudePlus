@@ -19,6 +19,44 @@ export default function MainPage({ navigation }: { navigation: any }) {
             <RegularText style={{ marginBottom: 20 }}>
                 Como podemos te ajudar hoje?
             </RegularText>
+            <SmallContainer style={{ flexDirection: "row", flexWrap: "wrap" }}>
+                <RegularButton
+                    style={{ width: 150, height: 100, margin: 2 }}
+                    onPress={() => alert("Indo para função 1")}
+                >
+                    Exames
+                </RegularButton>
+                <RegularButton
+                    style={{ width: 150, height: 100, margin: 2 }}
+                    onPress={() => alert("Indo para função 2")}
+                >
+                    Calendario
+                </RegularButton>
+                <RegularButton
+                    style={{ width: 150, height: 100, margin: 2 }}
+                    onPress={() => alert("Indo para função 3")}
+                >
+                    Função 3
+                </RegularButton>
+                <RegularButton
+                    style={{ width: 150, height: 100, margin: 2 }}
+                    onPress={() => alert("Indo para função 4")}
+                >
+                    Função 4
+                </RegularButton>
+                <RegularButton
+                    style={{ width: 150, height: 100, margin: 2 }}
+                    onPress={() => alert("Indo para função 5")}
+                >
+                    Função 5
+                </RegularButton>
+                <RegularButton
+                    style={{ width: 150, height: 100, margin: 2 }}
+                    onPress={() => alert("Indo para função 6")}
+                >
+                    Função 6
+                </RegularButton>
+            </SmallContainer>
         </MainContainer>
     );
 }

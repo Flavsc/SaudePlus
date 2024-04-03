@@ -10,7 +10,7 @@ const { white, black } = colors;
 const StyledText = styled.Text`
     font-size: 18px;
     color: ${black};
-    text-align: left;
+    text-align: center;
     font-family: Nunito;
 `;
 

@@ -8,10 +8,14 @@ const { primary, white } = colors;
 
 const StyledView = styled.View`
     flex: 1;
-    background-color: ${primary};
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    background-color: ${white};
+    display: grid;
+    grid-row-gap: 10px;
+    grid-auto-rows: 90px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 `;
 
 const SmallContainer: FunctionComponent<ContainerProps> = (props) => {
