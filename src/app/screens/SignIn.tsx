@@ -46,7 +46,7 @@ export default function SignIn({ navigation }: { navigation: any }) {
             </FakeButton>
             <RegularButton
                 style={{ marginBottom: 20 }}
-                onPress={() => navigation.navigate("Main")}
+                onPress={() => navigation.navigate("PaginaInicial")}
             >
                 Logar
             </RegularButton>

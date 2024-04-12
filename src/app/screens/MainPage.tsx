@@ -22,13 +22,13 @@ export default function MainPage({ navigation }: { navigation: any }) {
             <SmallContainer style={{ flexDirection: "row", flexWrap: "wrap" }}>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => alert("Indo para função 1")}
+                    onPress={() => navigation.navigate("Exames")}
                 >
                     Exames
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => alert("Indo para função 2")}
+                    onPress={() => navigation.navigate("Calendar")}
                 >
                     Calendario
                 </RegularButton>

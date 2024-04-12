@@ -1,6 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import Calendar from "@screens/Calendar";
 import CameraTest from "@screens/CameraTest";
+import HistoricExams from "@screens/HistoricExams";
+import HistoricExams_Cholesterol from "@screens/HistoricExams_Cholesterol";
+import HistoricExams_Glicose from "@screens/HistoricExams_Glicose";
+import HistoricExams_Hemogram from "@screens/HistoricExams_Hemogram";
+import HistoricExams_TGO from "@screens/HistoricExams_TGO";
+import HistoricExams_TGP from "@screens/HistoricExams_TGP";
 import InitialPage from "@screens/InitialPage";
 import MainPage from "@screens/MainPage";
 import PasswordForget from "@screens/PasswordForget";
@@ -17,11 +24,27 @@ export default function Nav() {
                 <Stack.Screen name=" " component={InitialPage} />
                 <Stack.Screen name="Login" component={SignIn} />
                 <Stack.Screen name="Cadastro" component={SignUp} />
-                <Stack.Screen name="Main" component={MainPage} />
+                <Stack.Screen name="PaginaInicial" component={MainPage} />
                 <Stack.Screen
                     name="PasswordForget"
                     component={PasswordForget}
                 />
+                <Stack.Screen name="Exames" component={HistoricExams} />
+                <Stack.Screen name="Calendar" component={Calendar} />
+                <Stack.Screen
+                    name="Hemograma"
+                    component={HistoricExams_Hemogram}
+                />
+                <Stack.Screen
+                    name="Glicose"
+                    component={HistoricExams_Glicose}
+                />
+                <Stack.Screen
+                    name="Colesterol"
+                    component={HistoricExams_Cholesterol}
+                />
+                <Stack.Screen name="TGO" component={HistoricExams_TGO} />
+                <Stack.Screen name="TGP" component={HistoricExams_TGP} />
             </Stack.Navigator>
         </NavigationContainer>
     );
