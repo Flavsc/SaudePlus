@@ -13,6 +13,9 @@
   </li>
   <br>
   <li>
+    <img src="./assets/Metro_Blunder_Logo.png" alt="Expo" width="80" height="40"/> Metro Blunder
+  </li>
+  <li>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" alt="Anroid studio" width="40" height="40"/> Android Studio
   </li>
   <br>
