@@ -11,37 +11,32 @@ import RegularText from "components/texts/RegularText";
 import React from "react";
 import { View } from "react-native";
 
-export default function configuration({ navigation }: { navigation: any }) {
+export default function Configuration({ navigation }: { navigation: any }) {
     return (
         <MainContainer>
             <SPlus />
-            <BigText style={{ marginBottom: 10 }}>
-                Bem Vindo placeholder.name
-            </BigText>
-            <RegularText style={{ marginBottom: 20 }}>
-                Configuração de perfil
-            </RegularText>
+            <BigText style={{ marginBottom: 40 }}>Configurações</BigText>
             <SmallContainer style={{ flexDirection: "row", flexWrap: "wrap" }}>
                 <RegularButton
-                    style={{ width: 200, height: 120, margin: 4 }}
+                    style={{ width: 150, height: 120, margin: 5 }}
                     onPress={() => alert("Função para alterar email")}
                 >
                     Alterar E-mail
                 </RegularButton>
                 <RegularButton
-                    style={{ width: 200, height: 120, margin: 4 }}
+                    style={{ width: 150, height: 120, margin: 5 }}
                     onPress={() => navigation.navigate("PasswordForget")}
                 >
                     Alterar Senha
                 </RegularButton>
                 <RegularButton
-                    style={{ width: 200, height: 120, margin: 4 }}
+                    style={{ width: 150, height: 120, margin: 5 }}
                     onPress={() => alert("Função para contatar suporte")}
                 >
                     Contatar suporte
                 </RegularButton>
                 <RegularButton
-                    style={{ width: 200, height: 120, margin: 4 }}
+                    style={{ width: 150, height: 120, margin: 5 }}
                     onPress={() => alert("Função para Excluir Conta")}
                 >
                     Excluir conta
