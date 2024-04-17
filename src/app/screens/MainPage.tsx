@@ -52,9 +52,9 @@ export default function MainPage({ navigation }: { navigation: any }) {
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => alert("Indo para função 6")}
+                    onPress={() => navigation.navigate("Configuration")}
                 >
-                    Função 6
+                    Configurações
                 </RegularButton>
             </SmallContainer>
         </MainContainer>
