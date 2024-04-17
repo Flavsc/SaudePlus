@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Calendar from "@screens/Calendar";
 import CameraTest from "@screens/CameraTest";
+import Configuration from "@screens/Configuration";
 import HistoricExams from "@screens/HistoricExams";
 import HistoricExams_Cholesterol from "@screens/HistoricExams_Cholesterol";
 import HistoricExams_Glicose from "@screens/HistoricExams_Glicose";
@@ -10,6 +11,8 @@ import HistoricExams_TGO from "@screens/HistoricExams_TGO";
 import HistoricExams_TGP from "@screens/HistoricExams_TGP";
 import InitialPage from "@screens/InitialPage";
 import MainPage from "@screens/MainPage";
+import NewPassword from "@screens/NewPassword";
+import PageForCodeDigit from "@screens/PageForCodeDigit";
 import PasswordForget from "@screens/PasswordForget";
 import SignIn from "@screens/SignIn";
 import SignUp from "@screens/SignUp";
@@ -45,6 +48,12 @@ export default function Nav() {
                 />
                 <Stack.Screen name="TGO" component={HistoricExams_TGO} />
                 <Stack.Screen name="TGP" component={HistoricExams_TGP} />
+                <Stack.Screen name="Configuration" component={Configuration} />
+                <Stack.Screen
+                    name="PageForCodeDigit"
+                    component={PageForCodeDigit}
+                />
+                <Stack.Screen name="NewPassword" component={NewPassword} />
             </Stack.Navigator>
         </NavigationContainer>
     );

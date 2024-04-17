@@ -11,30 +11,40 @@ import { useState } from "react";
 const { primary, accent, white } = colors;
 
 export default function PasswordForget({ navigation }: { navigation: any }) {
-    const [email, setEmail] = useState("");
+    const [codigoDigitado, setCodigo] = useState("");
+    const codigoEnviado = 1234;
+    function emailVerificado(codigoEnviado: number, codigoDigitado: number) {
+        if (codigoEnviado == codigoDigitado) {
+            return (
+                <RegularText style={{ marginBottom: 20 }}>
+                    Digite sua nova senha:
+                </RegularText>
+            );
+        } else {
+            alert("Código inválido!");
+        }
+    }
     return (
         <MainContainer>
             <SPlus />
             <BigText style={{ marginBottom: 20 }}>Insira os dados</BigText>
+            <StatusBar style="auto" />
             <RegularText style={{ marginBottom: 20 }}>
-                Enviaremos um link no seu e-mail para que você possa trocar de
-                senha.
+                Digite o código enviado para o seu email:
             </RegularText>
             <StyledTextInput
-                label="E-mail"
-                icon="email-variant"
-                value={email}
-                onChangeText={setEmail}
-                placeholder="seu@email.com"
-                keyboardType="email-address"
+                label="Codigo"
+                icon="account"
+                value={codigoDigitado}
+                onChangeText={setCodigo}
+                placeholder="Ex: 1234"
                 style={{ marginBottom: 50 }}
             />
-            <StatusBar style="auto" />
             <RegularButton
                 style={{ marginBottom: 20 }}
-                onPress={() => navigation.navigate("PageForCodeDigit")}
+                onPress={() => navigation.navigate("NewPassword")}
             >
-                Proximo
+                Verificar (Verificar se codigo e correto)
             </RegularButton>
         </MainContainer>
     );
