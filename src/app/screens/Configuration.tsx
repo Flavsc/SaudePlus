@@ -31,7 +31,7 @@ export default function Configuration({ navigation }: { navigation: any }) {
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 120, margin: 5 }}
-                    onPress={() => alert("Função para contatar suporte")}
+                    onPress={() => navigation.navigate("SupportContact")}
                 >
                     Contatar suporte
                 </RegularButton>

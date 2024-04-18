@@ -16,6 +16,7 @@ import PageForCodeDigit from "@screens/PageForCodeDigit";
 import PasswordForget from "@screens/PasswordForget";
 import SignIn from "@screens/SignIn";
 import SignUp from "@screens/SignUp";
+import SupportContact from "@screens/SupportContact";
 import TGT from "@screens/TextGridTest";
 
 const Stack = createStackNavigator();
@@ -31,6 +32,10 @@ export default function Nav() {
                 <Stack.Screen
                     name="PasswordForget"
                     component={PasswordForget}
+                />
+                <Stack.Screen
+                    name="SupportContact"
+                    component={SupportContact}
                 />
                 <Stack.Screen name="Exames" component={HistoricExams} />
                 <Stack.Screen name="Calendar" component={Calendar} />
