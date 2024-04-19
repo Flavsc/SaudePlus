@@ -11,6 +11,7 @@ import HistoricExams_TGO from "@screens/HistoricExams_TGO";
 import HistoricExams_TGP from "@screens/HistoricExams_TGP";
 import InitialPage from "@screens/InitialPage";
 import MainPage from "@screens/MainPage";
+import MedicalAppoitment from "@screens/MedicalAppoitment";
 import NewPassword from "@screens/NewPassword";
 import PageForCodeDigit from "@screens/PageForCodeDigit";
 import PasswordForget from "@screens/PasswordForget";
@@ -49,6 +50,10 @@ export default function Nav() {
                 <Stack.Screen name="TGO" component={HistoricExams_TGO} />
                 <Stack.Screen name="TGP" component={HistoricExams_TGP} />
                 <Stack.Screen name="Configuration" component={Configuration} />
+                <Stack.Screen
+                    name="MedicalAppoitment"
+                    component={MedicalAppoitment}
+                />
                 <Stack.Screen
                     name="PageForCodeDigit"
                     component={PageForCodeDigit}

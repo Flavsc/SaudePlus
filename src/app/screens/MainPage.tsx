@@ -40,9 +40,9 @@ export default function MainPage({ navigation }: { navigation: any }) {
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => alert("Indo para função 4")}
+                    onPress={() => navigation.navigate("MedicalAppoitment")}
                 >
-                    Função 4
+                    Consultas
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
