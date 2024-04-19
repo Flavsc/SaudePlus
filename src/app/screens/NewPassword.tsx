@@ -52,7 +52,7 @@ export default function PasswordForget({ navigation }: { navigation: any }) {
             <StatusBar style="auto" />
             <RegularButton
                 style={{ marginBottom: 20 }}
-                onPress={() => navigation.navigate("PaginaInicial")}
+                onPress={() => navigation.navigate("Login")}
             >
                 Finalizar
             </RegularButton>
