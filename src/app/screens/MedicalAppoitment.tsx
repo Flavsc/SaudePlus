@@ -6,8 +6,8 @@ export default function MedicalAppoitment({ navigation }: { navigation: any }) {
     return (
         <MainContainer>
             <Card.Title
-                title="Dr. Chinen"
-                subtitle="Exame de Prostata"
+                title="Teste Nome"
+                subtitle="Teste exame"
                 left={(props) => (
                     <Avatar.Icon {...props} icon="alpha-c-box-outline" />
                 )}
