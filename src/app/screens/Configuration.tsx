@@ -2,7 +2,6 @@ import SPlus from "@assets/images/sPlus";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RegularButton from "components/Buttons/RegularButton";
-import CameraT from "components/Camera/Camera";
 import GridView from "components/Grids/GridView";
 import MainContainer from "components/containers/MainContainer";
 import SmallContainer from "components/containers/SmallContainer";
@@ -19,7 +18,7 @@ export default function Configuration({ navigation }: { navigation: any }) {
             <SmallContainer style={{ flexDirection: "row", flexWrap: "wrap" }}>
                 <RegularButton
                     style={{ width: 150, height: 120, margin: 5 }}
-                    onPress={() => alert("Função para alterar email")}
+                    onPress={() => navigation.navigate("NewEmail")}
                 >
                     Alterar E-mail
                 </RegularButton>
@@ -37,7 +36,7 @@ export default function Configuration({ navigation }: { navigation: any }) {
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 120, margin: 5 }}
-                    onPress={() => alert("Função para Excluir Conta")}
+                    onPress={() => navigation.navigate("DeleteEmail")}
                 >
                     Excluir conta
                 </RegularButton>

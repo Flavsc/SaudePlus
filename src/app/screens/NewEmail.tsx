@@ -10,16 +10,17 @@ import { useState } from "react";
 
 const { primary, accent, white } = colors;
 
-export default function NewPassword({ navigation }: { navigation: any }) {
-    const [newPassword, setNewPassword] = useState("");
-    const [verifyNewPassword, setVerifyNewPassword] = useState("");
-    function samePassword() {
-        if (newPassword == verifyNewPassword) {
+export default function NewEmail({ navigation }: { navigation: any }) {
+    const [newEmail, setNewEmail] = useState("");
+    const [verifyNewEmail, setVerifyNewEmail] = useState("");
+    function sameEmail() {
+        if (newEmail == verifyNewEmail) {
             navigation.navigate("Login");
-            // Puxar função do functions que atualize a senha
+            // puxar função do functions que atualize o email
             return true;
         } else {
-            alert("Senhas não coincidem.");
+            alert("Emails não coincidem.");
+            navigation.navigate("NewEmail");
             return false;
         }
     }
@@ -31,11 +32,11 @@ export default function NewPassword({ navigation }: { navigation: any }) {
                 Digite sua nova senha:
             </RegularText>
             <StyledTextInput
-                label="Nova senha"
+                label="Novo email"
                 icon="lock-open"
-                value={newPassword}
-                onChangeText={setNewPassword}
-                placeholder="Nova senha"
+                value={newEmail}
+                onChangeText={setNewEmail}
+                placeholder="Novo email"
                 keyboardType="email-address"
                 style={{ marginBottom: 50 }}
             />
@@ -43,18 +44,18 @@ export default function NewPassword({ navigation }: { navigation: any }) {
                 Digite sua senha novamente:
             </RegularText>
             <StyledTextInput
-                label="Nova senha novamente"
+                label="Novo email novamente"
                 icon="lock-open"
-                value={verifyNewPassword}
-                onChangeText={setVerifyNewPassword}
-                placeholder="Nova senha"
+                value={verifyNewEmail}
+                onChangeText={setVerifyNewEmail}
+                placeholder="Novo email"
                 keyboardType="email-address"
                 style={{ marginBottom: 50 }}
             />
             <StatusBar style="auto" />
             <RegularButton
                 style={{ marginBottom: 20 }}
-                onPress={() => samePassword()}
+                onPress={() => sameEmail()}
             >
                 Finalizar
             </RegularButton>

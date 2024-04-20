@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Calendar from "@screens/Calendar";
 import CameraTest from "@screens/CameraTest";
 import Configuration from "@screens/Configuration";
+import DeleteEmail from "@screens/DeleteEmail";
 import HistoricExams from "@screens/HistoricExams";
 import HistoricExams_Cholesterol from "@screens/HistoricExams_Cholesterol";
 import HistoricExams_Glicose from "@screens/HistoricExams_Glicose";
@@ -12,6 +13,7 @@ import HistoricExams_TGP from "@screens/HistoricExams_TGP";
 import InitialPage from "@screens/InitialPage";
 import MainPage from "@screens/MainPage";
 import MedicinePage from "@screens/MedicinePage";
+import NewEmail from "@screens/NewEmail";
 import NewPassword from "@screens/NewPassword";
 import PageForCodeDigit from "@screens/PageForCodeDigit";
 import PasswordForget from "@screens/PasswordForget";
@@ -38,6 +40,8 @@ export default function Nav() {
                     name="SupportContact"
                     component={SupportContact}
                 />
+                <Stack.Screen name="NewEmail" component={NewEmail} />
+                <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
                 <Stack.Screen name="Remedios" component={MedicinePage} />
                 <Stack.Screen name="Exames" component={HistoricExams} />
                 <Stack.Screen name="Calendar" component={Calendar} />
