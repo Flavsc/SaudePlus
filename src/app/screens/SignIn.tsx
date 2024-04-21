@@ -8,6 +8,7 @@ import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
+import { Button } from "react-native-paper";
 
 const { primary, accent, white } = colors;
 
@@ -45,11 +46,28 @@ export default function SignIn({ navigation }: { navigation: any }) {
                 Esqueci minha senha
             </FakeButton>
             <RegularButton
-                style={{ marginBottom: 20 }}
+                style={{ marginBottom: 10 }}
                 onPress={() => navigation.navigate("PaginaInicial")}
             >
                 Logar
             </RegularButton>
+            <Button
+                style={{
+                    width: 343,
+                    height: 60,
+                    padding: 10,
+                    borderRadius: 15,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginBottom: 10
+                }}
+                buttonColor="gray"
+                icon="google"
+                mode="contained"
+                onPress={() => console.log("Pressed")}
+            >
+                Continuar com Google
+            </Button>
 
             <RegularButton
                 style={{ marginBottom: 20 }}
