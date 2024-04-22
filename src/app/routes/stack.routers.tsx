@@ -32,38 +32,20 @@ export default function Nav() {
                 <Stack.Screen name="Login" component={SignIn} />
                 <Stack.Screen name="Cadastro" component={SignUp} />
                 <Stack.Screen name="PaginaInicial" component={MainPage} />
-                <Stack.Screen
-                    name="PasswordForget"
-                    component={PasswordForget}
-                />
-                <Stack.Screen
-                    name="SupportContact"
-                    component={SupportContact}
-                />
+                <Stack.Screen name="PasswordForget" component={PasswordForget}/>
+                <Stack.Screen name="SupportContact" component={SupportContact}/>
                 <Stack.Screen name="NewEmail" component={NewEmail} />
                 <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
                 <Stack.Screen name="Remedios" component={MedicinePage} />
                 <Stack.Screen name="Exames" component={HistoricExams} />
                 <Stack.Screen name="Calendar" component={Calendar} />
-                <Stack.Screen
-                    name="Hemograma"
-                    component={HistoricExams_Hemogram}
-                />
-                <Stack.Screen
-                    name="Glicose"
-                    component={HistoricExams_Glicose}
-                />
-                <Stack.Screen
-                    name="Colesterol"
-                    component={HistoricExams_Cholesterol}
-                />
+                <Stack.Screen name="Hemograma" component={HistoricExams_Hemogram}/>
+                <Stack.Screen name="Glicose" component={HistoricExams_Glicose} />
+                <Stack.Screen name="Colesterol" component={HistoricExams_Cholesterol}/>
                 <Stack.Screen name="TGO" component={HistoricExams_TGO} />
                 <Stack.Screen name="TGP" component={HistoricExams_TGP} />
                 <Stack.Screen name="Configuration" component={Configuration} />
-                <Stack.Screen
-                    name="PageForCodeDigit"
-                    component={PageForCodeDigit}
-                />
+                <Stack.Screen name="PageForCodeDigit" component={PageForCodeDigit}/>
                 <Stack.Screen name="NewPassword" component={NewPassword} />
             </Stack.Navigator>
         </NavigationContainer>
