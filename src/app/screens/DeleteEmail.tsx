@@ -39,13 +39,21 @@ export default function DeleteEmail({ navigation }: { navigation: any }) {
             </SmallContainer>
             {checked && (
                 <Button
-                    buttonColor="darkgreen"
+                    style={{
+                        width: 343,
+                        height: 60,
+                        padding: 10,
+                        borderRadius: 15,
+                        justifyContent: "center",
+                        alignItems: "center",
+                        marginBottom: 60
+                    }}
+                    buttonColor="red"
                     icon="delete"
                     mode="contained"
-                    style={{ marginBottom: 50 }}
                     onPress={() => excluirConta()}
                 >
-                    Excluir
+                    DELETAR MINHA CONTA
                 </Button>
             )}
         </MainContainer>

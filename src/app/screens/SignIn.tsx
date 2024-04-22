@@ -21,6 +21,23 @@ export default function SignIn({ navigation }: { navigation: any }) {
         <MainContainer>
             <SPlus />
             <BigText style={{ marginBottom: 20 }}>Faça seu Login</BigText>
+            <Button
+                style={{
+                    width: 343,
+                    height: 60,
+                    padding: 10,
+                    borderRadius: 15,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginBottom: 10
+                }}
+                buttonColor="gray"
+                icon="google"
+                mode="contained"
+                onPress={() => console.log("Pressed")}
+            >
+                Continuar com Google
+            </Button>
             <StyledTextInput
                 label="E-mail"
                 icon="email-variant"
@@ -51,23 +68,6 @@ export default function SignIn({ navigation }: { navigation: any }) {
             >
                 Logar
             </RegularButton>
-            <Button
-                style={{
-                    width: 343,
-                    height: 60,
-                    padding: 10,
-                    borderRadius: 15,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginBottom: 10
-                }}
-                buttonColor="gray"
-                icon="google"
-                mode="contained"
-                onPress={() => console.log("Pressed")}
-            >
-                Continuar com Google
-            </Button>
 
             <RegularButton
                 style={{ marginBottom: 20 }}
