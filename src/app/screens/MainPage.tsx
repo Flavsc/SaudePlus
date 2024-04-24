@@ -28,15 +28,15 @@ export default function MainPage({ navigation }: { navigation: any }) {
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => navigation.navigate("Calendar")}
+                    onPress={() => navigation.navigate("Calendario")}
                 >
                     Calendario
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => alert("Indo para função 3")}
+                    onPress={() => navigation.navigate("Mapa")}
                 >
-                    Função 3
+                    Mapa
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
