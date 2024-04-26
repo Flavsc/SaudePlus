@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const { primary, accent, white } = colors;
 
-export default function NewEmail({ navigation }: { navigation: any }) {
+export default function Email({ navigation }: { navigation: any }) {
     const [newEmail, setNewEmail] = useState("");
     const [verifyNewEmail, setVerifyNewEmail] = useState("");
     function sameEmail() {
