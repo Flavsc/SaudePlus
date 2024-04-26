@@ -1,5 +1,6 @@
 <h1>App Saúde Plus - Gestão Inteligente de Saúde</h1>
 <h1>FrontEnd</h1>
+<p>O App YE Gestão em Saúde, junto com o Instituto Mauá De Tecnologia, tem como principal papel auxiliar os usuários a realizarem a auto gestão de suas questões de saúde como, lembretes de consulta, auxilio na interpretação de exames, lembretes dos medicamentos que toma, configurando apenas alguns pontos para que possa facilitar a utilização do usuário</p>
 
 <h2>Tecnologias</h2>
 <ul> 
