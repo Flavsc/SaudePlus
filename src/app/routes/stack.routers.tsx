@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import AboutUs from "@screens/AboutUs";
 import Calendar from "@screens/Calendar";
 import CameraTest from "@screens/CameraTest";
 import Configuration from "@screens/Configuration";
@@ -70,6 +71,7 @@ export default function Nav() {
                 />
                 <Stack.Screen name="NewEmail" component={NewEmail} />
                 <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
+                <Stack.Screen name="Sobre Nos" component={AboutUs} />
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -15,30 +15,56 @@ export default function Configuration({ navigation }: { navigation: any }) {
             <SPlus />
             <BigText style={{ marginBottom: 40 }}>Configurações</BigText>
             <SmallContainer style={{ flexDirection: "row", flexWrap: "wrap" }}>
-                <RegularButton
-                    style={{ width: 150, height: 120, margin: 5 }}
-                    onPress={() => navigation.navigate("NewEmail")}
-                >
-                    Alterar E-mail
-                </RegularButton>
-                <RegularButton
-                    style={{ width: 150, height: 120, margin: 5 }}
-                    onPress={() => navigation.navigate("PasswordForget")}
-                >
-                    Alterar Senha
-                </RegularButton>
-                <RegularButton
-                    style={{ width: 150, height: 120, margin: 5 }}
-                    onPress={() => navigation.navigate("SupportContact")}
-                >
-                    Contatar suporte
-                </RegularButton>
-                <RegularButton
-                    style={{ width: 150, height: 120, margin: 5 }}
-                    onPress={() => navigation.navigate("DeleteEmail")}
-                >
-                    Excluir conta
-                </RegularButton>
+                <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+                    <View style={{ width: "50%", padding: 5 }}>
+                        <RegularButton
+                            style={{
+                                width: "100%",
+                                height: 120,
+                                marginBottom: 10
+                            }}
+                            onPress={() => navigation.navigate("NewEmail")}
+                        >
+                            Alterar E-mail
+                        </RegularButton>
+                        <RegularButton
+                            style={{
+                                width: "100%",
+                                height: 120,
+                                marginBottom: 10
+                            }}
+                            onPress={() =>
+                                navigation.navigate("SupportContact")
+                            }
+                        >
+                            Contatar suporte
+                        </RegularButton>
+                    </View>
+                    <View style={{ width: "50%", padding: 5 }}>
+                        <RegularButton
+                            style={{
+                                width: "100%",
+                                height: 120,
+                                marginBottom: 10
+                            }}
+                            onPress={() =>
+                                navigation.navigate("PasswordForget")
+                            }
+                        >
+                            Alterar Senha
+                        </RegularButton>
+                        <RegularButton
+                            style={{
+                                width: "100%",
+                                height: 120,
+                                marginBottom: 10
+                            }}
+                            onPress={() => navigation.navigate("DeleteEmail")}
+                        >
+                            Excluir conta
+                        </RegularButton>
+                    </View>
+                </View>
             </SmallContainer>
         </MainContainer>
     );
