@@ -7,7 +7,8 @@ import MainContainer from "components/containers/MainContainer";
 import SmallContainer from "components/containers/SmallContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
-import React, { useState } from "react";
+import React = require("react");
+import { useState } from "react";
 import { View } from "react-native";
 import { Checkbox, Button } from "react-native-paper";
 

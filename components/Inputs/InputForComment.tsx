@@ -20,7 +20,8 @@ const InputField = styled.TextInput`
     border-radius: 10px;
     border-color: ${secondary};
     margin-top: 3px;
-    margin-bottom: 3px;
+    margin-vertical: 3px;
+    margin-bottom: 10px;
     padding: 15px;
     padding-left: 65px;
     padding-right: 55px;

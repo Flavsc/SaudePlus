@@ -10,11 +10,13 @@ import { useState } from "react";
 
 const { primary, accent, white } = colors;
 
-export default function PasswordForget({ navigation }: { navigation: any }) {
+export default function NewPassword({ navigation }: { navigation: any }) {
     const [newPassword, setNewPassword] = useState("");
     const [verifyNewPassword, setVerifyNewPassword] = useState("");
-    function samePassword(newPassword: string, verifyNewPassword: string) {
+    function samePassword() {
         if (newPassword == verifyNewPassword) {
+            navigation.navigate("Login");
+            // Puxar função do functions que atualize a senha
             return true;
         } else {
             alert("Senhas não coincidem.");
@@ -52,7 +54,7 @@ export default function PasswordForget({ navigation }: { navigation: any }) {
             <StatusBar style="auto" />
             <RegularButton
                 style={{ marginBottom: 20 }}
-                onPress={() => navigation.navigate("PaginaInicial")}
+                onPress={() => samePassword()}
             >
                 Finalizar
             </RegularButton>
