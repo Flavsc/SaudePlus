@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import AboutUs from "@screens/AboutUs";
 import Calendar from "@screens/Calendar";
 import CameraTest from "@screens/CameraTest";
 import Configuration from "@screens/Configuration";
@@ -12,7 +13,9 @@ import HistoricExams_TGO from "@screens/HistoricExams_TGO";
 import HistoricExams_TGP from "@screens/HistoricExams_TGP";
 import InitialPage from "@screens/InitialPage";
 import MainPage from "@screens/MainPage";
-import Email from "@screens/Email";
+import Map from "@screens/Map";
+import MedicalAppoitment from "@screens/MedicalAppoitment";
+import NewEmail from "@screens/NewEmail";
 import NewPassword from "@screens/NewPassword";
 import PageForCodeDigit from "@screens/PageForCodeDigit";
 import PasswordForget from "@screens/PasswordForget";
@@ -42,7 +45,7 @@ export default function Nav() {
                 <Stack.Screen name="NewEmail" component={NewEmail} />
                 <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
                 <Stack.Screen name="Exames" component={HistoricExams} />
-                <Stack.Screen name="Calendar" component={Calendar} />
+                <Stack.Screen name="Calendario" component={Calendar} />
                 <Stack.Screen
                     name="Hemograma"
                     component={HistoricExams_Hemogram}
@@ -59,10 +62,22 @@ export default function Nav() {
                 <Stack.Screen name="TGP" component={HistoricExams_TGP} />
                 <Stack.Screen name="Configuration" component={Configuration} />
                 <Stack.Screen
+                    name="MedicalAppoitment"
+                    component={MedicalAppoitment}
+                />
+                <Stack.Screen
                     name="PageForCodeDigit"
                     component={PageForCodeDigit}
                 />
                 <Stack.Screen name="NewPassword" component={NewPassword} />
+                <Stack.Screen name="Mapa" component={Map} />
+                <Stack.Screen
+                    name="SupportContact"
+                    component={SupportContact}
+                />
+                <Stack.Screen name="NewEmail" component={NewEmail} />
+                <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
+                <Stack.Screen name="Sobre Nos" component={AboutUs} />
             </Stack.Navigator>
         </NavigationContainer>
     );

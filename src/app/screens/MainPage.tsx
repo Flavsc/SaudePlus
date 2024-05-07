@@ -27,21 +27,25 @@ export default function MainPage({ navigation }: { navigation: any }) {
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => navigation.navigate("Calendar")}
+                    onPress={() => navigation.navigate("Calendario")}
                 >
-                    Calendario
+                    Calendário
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => alert("Indo para função 3")}
+                    onPress={() => navigation.navigate("Mapa")}
                 >
-                    Função 3
+                    Mapa
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => alert("Indo para função 4")}
+                    onPress={() => navigation.navigate("MedicalAppoitment")}
                 >
-                    Função 4
+                    Consultas
+                </RegularButton>
+                    onPress={() => navigation.navigate("Sobre Nos")}
+                >
+                    Sobre nós
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
@@ -53,7 +57,7 @@ export default function MainPage({ navigation }: { navigation: any }) {
                     style={{ width: 150, height: 100, margin: 2 }}
                     onPress={() => navigation.navigate("Configuration")}
                 >
-                    Configurações
+                    Configuração
                 </RegularButton>
             </SmallContainer>
         </MainContainer>
