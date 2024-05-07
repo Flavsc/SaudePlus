@@ -8,7 +8,6 @@ import MainContainer from "components/containers/MainContainer";
 import SmallContainer from "components/containers/SmallContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
-import React from "react";
 import { View } from "react-native";
 
 export default function MainPage({ navigation }: { navigation: any }) {
@@ -44,11 +43,15 @@ export default function MainPage({ navigation }: { navigation: any }) {
                 >
                     Consultas
                 </RegularButton>
-                <RegularButton
-                    style={{ width: 150, height: 100, margin: 2 }}
                     onPress={() => navigation.navigate("Sobre Nos")}
                 >
                     Sobre nós
+                </RegularButton>
+                <RegularButton
+                    style={{ width: 150, height: 100, margin: 2 }}
+                    onPress={() => navigation.navigate("Remedios")}
+                >
+                    Remédios
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}

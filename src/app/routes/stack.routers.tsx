@@ -38,6 +38,12 @@ export default function Nav() {
                     name="PasswordForget"
                     component={PasswordForget}
                 />
+                <Stack.Screen
+                    name="SupportContact"
+                    component={SupportContact}
+                />
+                <Stack.Screen name="NewEmail" component={NewEmail} />
+                <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
                 <Stack.Screen name="Exames" component={HistoricExams} />
                 <Stack.Screen name="Calendario" component={Calendar} />
                 <Stack.Screen
