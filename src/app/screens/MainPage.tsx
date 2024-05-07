@@ -43,10 +43,6 @@ export default function MainPage({ navigation }: { navigation: any }) {
                 >
                     Consultas
                 </RegularButton>
-                    onPress={() => navigation.navigate("Sobre Nos")}
-                >
-                    Sobre nós
-                </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
                     onPress={() => navigation.navigate("Remedios")}
@@ -58,6 +54,12 @@ export default function MainPage({ navigation }: { navigation: any }) {
                     onPress={() => navigation.navigate("Configuration")}
                 >
                     Configuração
+                </RegularButton>
+                <RegularButton
+                    style={{ margin: 2, width: "93%" }}
+                    onPress={() => navigation.navigate("Sobre Nos")}
+                >
+                    Sobre nós
                 </RegularButton>
             </SmallContainer>
         </MainContainer>

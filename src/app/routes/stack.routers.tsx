@@ -38,10 +38,6 @@ export default function Nav() {
                     name="PasswordForget"
                     component={PasswordForget}
                 />
-                <Stack.Screen
-                    name="SupportContact"
-                    component={SupportContact}
-                />
                 <Stack.Screen name="NewEmail" component={NewEmail} />
                 <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
                 <Stack.Screen name="Exames" component={HistoricExams} />
@@ -75,8 +71,6 @@ export default function Nav() {
                     name="SupportContact"
                     component={SupportContact}
                 />
-                <Stack.Screen name="NewEmail" component={NewEmail} />
-                <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
                 <Stack.Screen name="Sobre Nos" component={AboutUs} />
             </Stack.Navigator>
         </NavigationContainer>
