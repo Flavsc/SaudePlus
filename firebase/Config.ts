@@ -34,7 +34,7 @@ export default async function loginWithGoogle() {
     try {
         const provider = new GoogleAuthProvider();
         // Solicitar as credenciais do Google
-        const userCredential = await auth.signInWithPopup(provider);
+        const userCredential = await signInWithPopup(auth, provider);
         // Obter as credenciais de autenticação do usuário
         const credential = GoogleAuthProvider.credentialFromResult(
             userCredential!
