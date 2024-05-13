@@ -19,11 +19,14 @@
             "adaptiveIcon": {
                 "foregroundImage": "./assets/adaptive-icon.png",
                 "backgroundColor": "#ffffff"
-            }
+            },
+            "package": "com.authentication" 
+
         },
         "web": {
             "favicon": "./assets/favicon.png"
         },
+        
         "plugins": [
             [
                 "expo-camera",
