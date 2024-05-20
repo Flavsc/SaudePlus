@@ -9,7 +9,12 @@ export default function MedicalAppoitment({ navigation }: { navigation: any }) {
                 title="Teste Nome"
                 subtitle="Teste exame"
                 left={(props) => (
-                    <Avatar.Icon {...props} icon="alpha-c-box-outline" />
+                    <Avatar.Icon
+                        {...props}
+                        icon="alpha-c-box-outline"
+                        style={{ backgroundColor: "#739986" }}
+                        color="white"
+                    />
                 )}
                 right={(props) => (
                     <IconButton
@@ -23,6 +28,7 @@ export default function MedicalAppoitment({ navigation }: { navigation: any }) {
             <Button
                 icon="plus"
                 mode="contained"
+                buttonColor="#739986"
                 onPress={() => console.log("Pressed")}
             >
                 Adicionar Consulta
