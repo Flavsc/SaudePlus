@@ -7,6 +7,7 @@ import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
+import loginWithGoogle from "firebase/Config";
 import { useState } from "react";
 import { Button } from "react-native-paper";
 
@@ -34,7 +35,7 @@ export default function SignIn({ navigation }: { navigation: any }) {
                 buttonColor="gray"
                 icon="google"
                 mode="contained"
-                onPress={() => console.log("Pressed")}
+                onPress={() => loginWithGoogle()}
             >
                 Continuar com Google
             </Button>
