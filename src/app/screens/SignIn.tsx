@@ -7,8 +7,12 @@ import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
-import loginWithGoogle, { auth } from "firebase/Config";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "firebase/Config";
+import {
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    GoogleAuthProvider
+} from "firebase/auth";
 import { useState } from "react";
 import { Button } from "react-native-paper";
 const { primary, accent, white } = colors;
@@ -37,6 +41,18 @@ export default function SignIn({ navigation }: { navigation: any }) {
             console.error("Erro ao fazer login:", error);
             alert("Usuário ou senha inválidos");
         }
+    }
+
+    async function loginWithGoogle() {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+                alert("Usuário autenticado com Google");
+            })
+            .catch((error) => {
+                alert("Erro ao fazer login com Google");
+            });
     }
 
     return (

@@ -29,25 +29,3 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-
-export default async function loginWithGoogle() {
-    try {
-        const provider = new GoogleAuthProvider();
-        // Solicitar as credenciais do Google
-        const userCredential = await signInWithPopup(auth, provider);
-        // Obter as credenciais de autenticação do usuário
-        const credential = GoogleAuthProvider.credentialFromResult(
-            userCredential!
-        );
-        // Autenticar o usuário com as credenciais obtidas
-        const result = await signInWithCredential(auth, credential!);
-        // Usuário logado com sucesso
-        const user = result.user;
-        console.log(user);
-        return user;
-    } catch (error) {
-        // Se ocorrer algum erro
-        console.error(error);
-        return null;
-    }
-}

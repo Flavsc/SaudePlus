@@ -6,6 +6,8 @@ import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
+import { auth } from "firebase/Config";
+import { AuthErrorCodes, getAuth, updatePassword } from "firebase/auth";
 import { useState } from "react";
 
 const { primary, accent, white } = colors;
@@ -13,10 +15,32 @@ const { primary, accent, white } = colors;
 export default function NewPassword({ navigation }: { navigation: any }) {
     const [newPassword, setNewPassword] = useState("");
     const [verifyNewPassword, setVerifyNewPassword] = useState("");
-    function samePassword() {
+    async function changeUserPassword() {
+        const auth = getAuth();
+        const user = auth.currentUser;
+        if (user) {
+            try {
+                await updatePassword(user, newPassword);
+                console.log("Password updated successfully");
+                alert("Success");
+                // Adicione aqui qualquer lógica adicional que você deseja após a atualização da senha
+            } catch (error) {
+                console.error("Error updating password:", error);
+            }
+        } else {
+            console.log("No user is currently signed in");
+            alert("No user is currently signed in");
+        }
+    }
+    async function samePassword() {
         if (newPassword == verifyNewPassword) {
-            navigation.navigate("Login");
-            // Puxar função do functions que atualize a senha
+            if (newPassword.length >= 6) {
+                await changeUserPassword();
+                navigation.navigate("Login");
+            } else {
+                alert("Senha melhor !");
+            }
+
             return true;
         } else {
             alert("Senhas não coincidem.");
