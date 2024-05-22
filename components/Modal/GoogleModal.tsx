@@ -7,6 +7,7 @@ import StyledTextInput from 'components/Inputs/StyledTextInput';
 import { useNavigation } from '@react-navigation/native';
 export var globalEmail: string;
 
+const pagina: never = "PaginaInicial";
 export default function GoogleModal() {
 
   const [email, setEmail] = useState("");
@@ -38,7 +39,7 @@ export default function GoogleModal() {
 
         console.log("Usuário autenticado:", user);
         alert("Conta Google Autenticada!");
-        navigation.navigate("PaginaInicial");
+        navigation.navigate(pagina);
         setModalVisible(!modalVisible);
     } catch (error) {
         console.error("Erro ao fazer login:", error);
