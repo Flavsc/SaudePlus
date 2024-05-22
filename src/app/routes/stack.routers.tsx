@@ -23,6 +23,7 @@ import SignIn from "@screens/SignIn";
 import SignUp from "@screens/SignUp";
 import SupportContact from "@screens/SupportContact";
 import TGT from "@screens/TextGridTest";
+import GoogleModal from "components/Modal/GoogleModal";
 
 const Stack = createStackNavigator();
 
@@ -72,6 +73,7 @@ export default function Nav() {
                     component={SupportContact}
                 />
                 <Stack.Screen name="Sobre Nos" component={AboutUs} />
+                <Stack.Screen name="GoogleModal" component={GoogleModal} />
             </Stack.Navigator>
         </NavigationContainer>
     );
