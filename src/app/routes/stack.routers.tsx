@@ -15,6 +15,7 @@ import InitialPage from "@screens/InitialPage";
 import MainPage from "@screens/MainPage";
 import Map from "@screens/Map";
 import MedicalAppoitment from "@screens/MedicalAppoitment";
+import MedicinePage from "@screens/MedicinePage";
 import NewEmail from "@screens/NewEmail";
 import NewPassword from "@screens/NewPassword";
 import PageForCodeDigit from "@screens/PageForCodeDigit";
@@ -41,6 +42,7 @@ export default function Nav() {
                 <Stack.Screen name="NewEmail" component={NewEmail} />
                 <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
                 <Stack.Screen name="Exames" component={HistoricExams} />
+                <Stack.Screen name="MedicinePage" component={MedicinePage} />
                 <Stack.Screen name="Calendario" component={Calendar} />
                 <Stack.Screen
                     name="Hemograma"
