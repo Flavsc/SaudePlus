@@ -58,41 +58,6 @@ export default function SignIn({ navigation }: { navigation: any }) {
     return (
         <MainContainer>
             <SPlus />
-            <BigText style={{ marginBottom: 20 }}>Faça seu Login</BigText>
-            <Button
-                style={{
-                    width: 343,
-                    height: 60,
-                    padding: 10,
-                    borderRadius: 15,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginBottom: 10
-                }}
-                buttonColor="gray"
-                icon="google"
-                mode="contained"
-                onPress={() => loginWithGoogle()}
-            >
-                Continuar com Google
-            </Button>
-            <Button
-                style={{
-                    width: 343,
-                    height: 60,
-                    padding: 10,
-                    borderRadius: 15,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginBottom: 10
-                }}
-                buttonColor="blue"
-                icon="facebook"
-                mode="contained"
-                onPress={() => console.log("Pressed")}
-            >
-                Continuar com Facebook
-            </Button>
             <StyledTextInput
                 label="E-mail"
                 icon="email-variant"
