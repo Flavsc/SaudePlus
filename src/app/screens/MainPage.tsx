@@ -45,7 +45,7 @@ export default function MainPage({ navigation }: { navigation: any }) {
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => navigation.navigate("Remedios")}
+                    onPress={() => navigation.navigate("MedicinePage")}
                 >
                     Remédios
                 </RegularButton>
