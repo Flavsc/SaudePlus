@@ -1,14 +1,10 @@
-import { Given, When, Then } from 'cucumber';
+import { Given, When, Then } from "cucumber";
 
 //Calendario.feature
-Given('uma consulta marcada', (day, month) => {
+Given("uma consulta marcada", (day, month) => {});
 
-});
+When("vejo no calendario a consulta marcada", () => {});
 
-When('vejo no calendario a consulta marcada', () => {
-
-});
-
-Then('será dado um lembrete para a pessoa que a consulta esta chegando', () => {
-    alert("Consulta marcada para o dia " + day + " do mês " + month)
+Then("será dado um lembrete para a pessoa que a consulta esta chegando", () => {
+    alert("Consulta marcada para o dia " + day + " do mês " + month);
 });

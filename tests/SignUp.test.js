@@ -1,15 +1,15 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import MainContainer from 'components/containers/MainContainer';
-import StyledTextInput from 'components/inputs/StyledTextInput'; // ajuste o caminho conforme necessário
-import { Button } from 'react-native-paper';
+import React from "react";
+import renderer from "react-test-renderer";
+import MainContainer from "components/containers/MainContainer";
+import StyledTextInput from "components/inputs/StyledTextInput"; // ajuste o caminho conforme necessário
+import { Button } from "react-native-paper";
 
-describe('SignUp', () => {
-    it('Carregar menu de cadastro', () => {
+describe("SignUp", () => {
+    it("Carregar menu de cadastro", () => {
         let container;
 
         act(() => {
-            container = document.createElement('div');
+            container = document.createElement("div");
             document.body.appendChild(container);
             ReactDOM.render(<MainContainer />, container);
         });
@@ -18,6 +18,6 @@ describe('SignUp', () => {
             ReactDOM.unmountComponentAtNode(container);
         });
 
-        expect(Button.props.children).toEqual(<StyledTextInput/>);
+        expect(Button.props.children).toEqual(<StyledTextInput />);
     });
 });

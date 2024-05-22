@@ -6,7 +6,11 @@ import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
 import { auth } from "firebase/Config";
-import { AuthErrorCodes, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import {
+    AuthErrorCodes,
+    createUserWithEmailAndPassword,
+    sendEmailVerification
+} from "firebase/auth";
 import { useState } from "react";
 
 export default function SignUp({ navigation }: { navigation: any }) {
@@ -23,9 +27,9 @@ export default function SignUp({ navigation }: { navigation: any }) {
                 );
                 const user = userCredential.user;
                 try {
-                    sendEmailVerification(user)
+                    sendEmailVerification(user);
                 } catch (error) {
-                    alert(error)
+                    alert(error);
                 }
                 console.log("Usuário registrado:", user);
                 alert("usuário cadastrado com sucesso!");

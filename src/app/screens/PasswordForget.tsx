@@ -13,15 +13,14 @@ const { primary, accent, white } = colors;
 
 export default function PasswordForget({ navigation }: { navigation: any }) {
     const [email, setEmail] = useState("");
-    async function resetEmail(){
+    async function resetEmail() {
         try {
-            await sendPasswordResetEmail(auth,email);
+            await sendPasswordResetEmail(auth, email);
             alert("Email enviado!");
             navigation.navigate("Login");
         } catch (error) {
-            alert(error)
+            alert(error);
         }
-       
     }
     return (
         <MainContainer>

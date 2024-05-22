@@ -1,21 +1,17 @@
-import { Given, When, Then } from 'cucumber';
+import { Given, When, Then } from "cucumber";
 
 //TelaCadastro.feature
-Given('um usuario e senha para cadastrar uma conta', (user, password) => {
+Given("um usuario e senha para cadastrar uma conta", (user, password) => {});
 
-});
-
-When('clico no botao para enviar as validacao', () => {
+When("clico no botao para enviar as validacao", () => {
     <RegularButton
         onPress={() => {
-            alert("Armazenando Dados...")
-            navigation.navigate("PaginaInicial")
+            alert("Armazenando Dados...");
+            navigation.navigate("PaginaInicial");
         }}
     >
         Continuar
-    </RegularButton>
+    </RegularButton>;
 });
 
-Then('será direcionado para pagina principal', () => {
-  
-});
+Then("será direcionado para pagina principal", () => {});
