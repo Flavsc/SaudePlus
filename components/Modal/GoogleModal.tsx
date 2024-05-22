@@ -4,17 +4,26 @@ import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 
 import { auth } from "firebase/Config"; 
 import { IconButton } from 'react-native-paper';
 import StyledTextInput from 'components/Inputs/StyledTextInput';
+import { useNavigation } from '@react-navigation/native';
 export var globalEmail: string;
 
-export default function GoogleModal({ navigation }: { navigation: any }) {
+export default function GoogleModal() {
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+  const navigation = useNavigation();
 
   globalEmail = email;
-
+  function isModalOpen(){
+    if(modalVisible == true){
+      setModalVisible(false);
+    }
+    if(modalVisible == false){
+      setModalVisible(true);
+    }
+  }
   async function login(): Promise<void> {
     try {
         if (email && password == null) {
@@ -28,7 +37,9 @@ export default function GoogleModal({ navigation }: { navigation: any }) {
         const user = userCredential.user;
 
         console.log("Usuário autenticado:", user);
+        alert("Conta Google Autenticada!");
         navigation.navigate("PaginaInicial");
+        setModalVisible(!modalVisible);
     } catch (error) {
         console.error("Erro ao fazer login:", error);
         alert("Usuário ou senha inválidos");
@@ -42,8 +53,8 @@ export default function GoogleModal({ navigation }: { navigation: any }) {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
-          setModalVisible(!modalVisible);
+          alert('Modal has been closed.');
+          setModalVisible(false);
         }}
       >
         <View style={styles.centeredView}>
@@ -78,7 +89,7 @@ export default function GoogleModal({ navigation }: { navigation: any }) {
               <Text  style={styles.textStyle}>Login</Text>
             </Pressable>
             <Pressable
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => isModalOpen()}
             >
               <Text style={styles.textStyle}>Fechar</Text>
             </Pressable>

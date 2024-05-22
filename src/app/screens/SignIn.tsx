@@ -54,7 +54,7 @@ export default function SignIn({ navigation }: { navigation: any }) {
         <MainContainer>
             <SPlus />
             <BigText style={{marginBottom: 10}}>Faça seu Login</BigText>
-            <GoogleModal navigation={undefined} />
+            <GoogleModal />
             <StyledTextInput
                 label="E-mail"
                 icon="email-variant"
