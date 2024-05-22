@@ -7,16 +7,53 @@ import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
-import loginWithGoogle from "firebase/Config";
+import { auth } from "firebase/Config";
+import {
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    GoogleAuthProvider
+} from "firebase/auth";
 import { useState } from "react";
 import { Button } from "react-native-paper";
-
 const { primary, accent, white } = colors;
-
+export var globalEmail: string;
 export default function SignIn({ navigation }: { navigation: any }) {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+    globalEmail = email;
+    async function login(): Promise<void> {
+        try {
+            if (email && password == null) {
+                alert("Campo vazio!");
+            }
+            const userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+            const user = userCredential.user;
+
+            console.log("Usuário autenticado:", user);
+            alert("Login realizado com sucesso");
+            navigation.navigate("PaginaInicial");
+        } catch (error) {
+            console.error("Erro ao fazer login:", error);
+            alert("Usuário ou senha inválidos");
+        }
+    }
+
+    async function loginWithGoogle() {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+                alert("Usuário autenticado com Google");
+            })
+            .catch((error) => {
+                alert("Erro ao fazer login com Google");
+            });
+    }
 
     return (
         <MainContainer>
@@ -80,10 +117,7 @@ export default function SignIn({ navigation }: { navigation: any }) {
             >
                 Esqueci minha senha
             </FakeButton>
-            <RegularButton
-                style={{ marginBottom: 10 }}
-                onPress={() => navigation.navigate("PaginaInicial")}
-            >
+            <RegularButton style={{ marginBottom: 10 }} onPress={() => login()}>
                 Logar
             </RegularButton>
 

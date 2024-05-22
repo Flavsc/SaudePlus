@@ -5,12 +5,40 @@ import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
+import { auth } from "firebase/Config";
+import { AuthErrorCodes, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 
-export default function SignUp() {
+export default function SignUp({ navigation }: { navigation: any }) {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+    async function cadastrar(): Promise<void> {
+        try {
+            if (email && password != null) {
+                const userCredential = await createUserWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
+                const user = userCredential.user;
+
+                console.log("Usuário registrado:", user);
+                alert("usuário cadastrado com sucesso!");
+                navigation.navigate("Login");
+            }
+        } catch (error) {
+            console.error("Erro ao registrar usuário:", error);
+            alert("Erro ao cadastrar usuário");
+            if (AuthErrorCodes.EMAIL_EXISTS) {
+                alert("Esse email já existe!");
+            } else if (AuthErrorCodes.INVALID_EMAIL) {
+                alert("O email fornecido é muito fraco.");
+            } else if (AuthErrorCodes.WEAK_PASSWORD) {
+                alert("A senha inserida é muito fraca!");
+            }
+        }
+    }
 
     return (
         <MainContainer>
@@ -45,7 +73,7 @@ export default function SignUp() {
 
             <RegularButton
                 onPress={() => {
-                    alert("Armazenando Dados...");
+                    cadastrar();
                 }}
             >
                 Continuar
