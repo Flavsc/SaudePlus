@@ -7,14 +7,29 @@ import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
+import { auth } from "firebase/Config";
+import { updateEmail } from "firebase/auth";
 
 const { primary, accent, white } = colors;
 
 export default function NewEmail({ navigation }: { navigation: any }) {
     const [newEmail, setNewEmail] = useState("");
     const [verifyNewEmail, setVerifyNewEmail] = useState("");
+    async function updateEmailAdress() {
+        const user = auth.currentUser;
+        if(user){
+            try {
+                await updateEmail(user, newEmail);
+            } catch (error) {
+                alert(error);
+            }
+        }else{
+            alert("Sessão não iniciada ou algum erro inesperado aconteceu");
+        }
+    }
     function sameEmail() {
         if (newEmail == verifyNewEmail) {
+            updateEmailAdress();
             navigation.navigate("Login");
             // puxar função do functions que atualize o email
             return true;

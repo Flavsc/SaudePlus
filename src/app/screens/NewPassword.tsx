@@ -21,11 +21,12 @@ export default function NewPassword({ navigation }: { navigation: any }) {
         if (user) {
             try {
                 await updatePassword(user, newPassword);
-                console.log("Password updated successfully");
-                alert("Success");
+                console.log("Senha Atualizada");
+                alert("Senha Atualizadaa");
                 // Adicione aqui qualquer lógica adicional que você deseja após a atualização da senha
             } catch (error) {
-                console.error("Error updating password:", error);
+                console.error("Erro ao atualizar senha: ", error);
+                alert("Ocorreu um erro ao atualizar a senha.")
             }
         } else {
             console.log("No user is currently signed in");
