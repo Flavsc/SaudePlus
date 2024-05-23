@@ -32,7 +32,7 @@ export default function SignUp({ navigation }: { navigation: any }) {
                 } catch (error) {
                     alert(error);
                 }
-                console.log("Usuário registrado:", user);
+                
                 alert("usuário cadastrado com sucesso!");
                 navigation.navigate("Login");
             }

@@ -42,12 +42,11 @@ export default function SignIn({ navigation }: { navigation: any }) {
             );
             const user = userCredential.user;
 
-            console.log("Usuário autenticado:", user);
-            alert("Login realizado com sucesso");
+            
+            alert("Login realizado com sucesso!");
             navigation.navigate("PaginaInicial");
         } catch (error) {
-            console.error("Erro ao fazer login:", error);
-            alert("Usuário ou senha inválidos");
+            alert(error);
         }
     }
 
