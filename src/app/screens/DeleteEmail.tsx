@@ -7,16 +7,24 @@ import MainContainer from "components/containers/MainContainer";
 import SmallContainer from "components/containers/SmallContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
-import React = require("react");
 import { useState } from "react";
 import { View } from "react-native";
 import { Checkbox, Button } from "react-native-paper";
+import { auth } from "firebase/Config";
+import { deleteUser } from "firebase/auth";
 
 export default function DeleteEmail({ navigation }: { navigation: any }) {
-    const [checked, setChecked] = React.useState(false);
-    function excluirConta() {
-        // Função de excluir tudo do usuário
-        navigation.navigate(" ");
+    const [checked, setChecked] = useState(false);
+    async function excluirConta() {
+        const user = auth.currentUser;
+        if (user) {
+            await deleteUser(user);
+            alert("Conta foi deletada com sucesso!");
+            navigation.navigate("Login");
+        } else {
+            alert("Não está logado!");
+            navigation.navigate("Login");
+        }
     }
     return (
         <MainContainer>

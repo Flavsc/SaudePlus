@@ -1,24 +1,22 @@
-import { Given, When, Then } from 'cucumber';
+import { Given, When, Then } from "cucumber";
 
 //TelaConsulta.feature
-Given('um exame para ser cadastrado', () => {
+Given("um exame para ser cadastrado", () => {
     <Button
-    // ...
-    onPress={() => console.log("Pressed")}
+        // ...
+        onPress={() => console.log("Pressed")}
     >
         Adicionar Consulta
-    </Button>
+    </Button>;
 });
 
-When('eu confirmo a presenca da consulta', () => {
+When("eu confirmo a presenca da consulta", () => {
     <Button
-    // ...
-    onPress={() => console.log("Pressed")}
+        // ...
+        onPress={() => console.log("Pressed")}
     >
         Adicionar Consulta
-    </Button>
+    </Button>;
 });
 
-Then('posso deixar armazenado o registro da consulta', () => {
-  
-});
+Then("posso deixar armazenado o registro da consulta", () => {});

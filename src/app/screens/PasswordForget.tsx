@@ -7,11 +7,21 @@ import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-
+import { auth } from "firebase/Config";
+import { sendPasswordResetEmail } from "firebase/auth";
 const { primary, accent, white } = colors;
 
 export default function PasswordForget({ navigation }: { navigation: any }) {
     const [email, setEmail] = useState("");
+    async function resetEmail() {
+        try {
+            await sendPasswordResetEmail(auth, email);
+            alert("Email enviado!");
+            navigation.navigate("Login");
+        } catch (error) {
+            alert(error);
+        }
+    }
     return (
         <MainContainer>
             <SPlus />
@@ -32,9 +42,9 @@ export default function PasswordForget({ navigation }: { navigation: any }) {
             <StatusBar style="auto" />
             <RegularButton
                 style={{ marginBottom: 20 }}
-                onPress={() => navigation.navigate("PageForCodeDigit")}
+                onPress={() => resetEmail()}
             >
-                Proximo
+                Enviar
             </RegularButton>
         </MainContainer>
     );

@@ -7,21 +7,27 @@ import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
+import { auth } from "firebase/Config";
+import { updateEmail } from "firebase/auth";
 
 const { primary, accent, white } = colors;
 
 export default function Email({ navigation }: { navigation: any }) {
     const [newEmail, setNewEmail] = useState("");
     const [verifyNewEmail, setVerifyNewEmail] = useState("");
-    function sameEmail() {
+    async function sameEmail() {
         if (newEmail == verifyNewEmail) {
-            navigation.navigate("Login");
-            // puxar função do functions que atualize o email
+            const user = auth.currentUser;
+            if (user) {
+                await updateEmail(user, newEmail);
+                alert("Email alterado com sucesso!");
+                navigation.navigate("Login");
+            } else {
+                alert("Erro ao alterar senha.");
+            }
+
             return true;
         } else {
-            alert("Emails não coincidem.");
-            navigation.navigate("NewEmail");
-            return false;
         }
     }
     return (
@@ -29,7 +35,7 @@ export default function Email({ navigation }: { navigation: any }) {
             <SPlus />
             <BigText style={{ marginBottom: 20 }}>Insira os dados</BigText>
             <RegularText style={{ marginBottom: 20 }}>
-                Digite sua nova senha:
+                Digite seu novo email:
             </RegularText>
             <StyledTextInput
                 label="Novo email"
@@ -41,7 +47,7 @@ export default function Email({ navigation }: { navigation: any }) {
                 style={{ marginBottom: 50 }}
             />
             <RegularText style={{ marginBottom: 20 }}>
-                Digite sua senha novamente:
+                Digite seu novo email novamente:
             </RegularText>
             <StyledTextInput
                 label="Novo email novamente"
@@ -57,7 +63,7 @@ export default function Email({ navigation }: { navigation: any }) {
                 style={{ marginBottom: 20 }}
                 onPress={() => sameEmail()}
             >
-                Finalizar
+                Alterar
             </RegularButton>
         </MainContainer>
     );

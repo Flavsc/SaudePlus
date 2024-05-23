@@ -1,14 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import MainContainer from 'components/containers/MainContainer';
-import RegularButton from 'components/Buttons/RegularButton';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import MainContainer from "components/containers/MainContainer";
+import RegularButton from "components/Buttons/RegularButton";
 
-describe('SupportContact', () => {
-    it('Carregar menu de suporte', () => {
+describe("SupportContact", () => {
+    it("Carregar menu de suporte", () => {
         let container;
 
         act(() => {
-            container = document.createElement(<MainContainer/>);
+            container = document.createElement(<MainContainer />);
             document.body.appendChild(container);
             ReactDOM.render(<MainContainer />, container);
         });
@@ -17,6 +17,6 @@ describe('SupportContact', () => {
             ReactDOM.unmountComponentAtNode(container);
         });
 
-        expect(Button.props.children).toEqual(<RegularButton/>);
+        expect(Button.props.children).toEqual(<RegularButton />);
     });
 });
