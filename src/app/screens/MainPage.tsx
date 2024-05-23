@@ -1,4 +1,4 @@
-import SPlus from "@assets/images/sPlus";
+import SPlus from "@assets/images/YELogo";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RegularButton from "components/Buttons/RegularButton";

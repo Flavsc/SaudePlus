@@ -1,4 +1,4 @@
-import SPlus from "@assets/images/sPlus";
+import SPlus from "@assets/images/YELogo";
 import MainContainer from "components/containers/MainContainer";
 import SmallContainer from "components/containers/SmallContainer";
 import BigText from "components/texts/BigText";

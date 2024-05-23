@@ -1,4 +1,4 @@
-import SPlus from "@assets/images/sPlus";
+import SPlus from "@assets/images/YELogo";
 import RegularButton from "components/Buttons/RegularButton";
 import StyledTextInput from "components/Inputs/StyledTextInput";
 import { colors } from "components/colors";

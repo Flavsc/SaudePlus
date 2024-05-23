@@ -1,4 +1,4 @@
-import SPlus from "@assets/images/sPlus";
+import SPlus from "@assets/images/YELogo";
 import RegularButton from "components/Buttons/RegularButton";
 import StyledTextInput from "components/Inputs/StyledTextInput";
 import MainContainer from "components/containers/MainContainer";
@@ -6,6 +6,7 @@ import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
 import { StatusBar } from "expo-status-bar";
 import { auth } from "firebase/Config";
+import { ScrollView } from "react-native-gesture-handler";
 import {
     AuthErrorCodes,
     createUserWithEmailAndPassword,
@@ -49,45 +50,47 @@ export default function SignUp({ navigation }: { navigation: any }) {
     }
 
     return (
-        <MainContainer>
-            <SPlus />
-            <BigText style={{ marginBottom: 20 }}>Faça seu Cadastro</BigText>
-            <StyledTextInput
-                label="E-mail"
-                icon="email-variant"
-                value={email}
-                onChangeText={setEmail}
-                placeholder="seu@email.com"
-                keyboardType="email-address"
-                style={{ marginBottom: 20 }}
-            />
-            <StyledTextInput
-                label="Nome Completo"
-                icon="account"
-                value={name}
-                onChangeText={setName}
-                placeholder="Seu Nome"
-                style={{ marginBottom: 20 }}
-            />
-            <StyledTextInput
-                label="Senha"
-                icon="lock-open"
-                value={password}
-                onChangeText={setPassword}
-                placeholder="Sua Senha"
-                isPassword
-                style={{ marginBottom: 20 }}
-            />
+            <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+                <MainContainer>
+                    <SPlus />
+                    <BigText style={{ marginBottom: 20 }}>Faça seu Cadastro</BigText>
+                    <StyledTextInput
+                        label="E-mail"
+                        icon="email-variant"
+                        value={email}
+                        onChangeText={setEmail}
+                        placeholder="seu@email.com"
+                        keyboardType="email-address"
+                        style={{ marginBottom: 20 }}
+                    />
+                    <StyledTextInput
+                        label="Nome Completo"
+                        icon="account"
+                        value={name}
+                        onChangeText={setName}
+                        placeholder="Seu Nome"
+                        style={{ marginBottom: 20 }}
+                    />
+                    <StyledTextInput
+                        label="Senha"
+                        icon="lock-open"
+                        value={password}
+                        onChangeText={setPassword}
+                        placeholder="Sua Senha"
+                        isPassword
+                        style={{ marginBottom: 20 }}
+                    />
 
-            <RegularButton
-                onPress={() => {
-                    cadastrar();
-                }}
-            >
-                Continuar
-            </RegularButton>
+                    <RegularButton
+                        onPress={() => {
+                            cadastrar();
+                        }}
+                    >
+                        Continuar
+                    </RegularButton>
 
-            <StatusBar style="auto" />
-        </MainContainer>
+                    <StatusBar style="auto" />
+                </MainContainer>
+            </ScrollView>
     );
 }

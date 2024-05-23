@@ -1,4 +1,4 @@
-import SPlus from "@assets/images/sPlus";
+import SPlus from "@assets/images/YELogo";
 import FakeButton from "components/Buttons/FakeButton";
 import RegularButton from "components/Buttons/RegularButton";
 import StyledTextInput from "components/Inputs/StyledTextInput";
@@ -10,6 +10,7 @@ import { IconButton, Button, Portal, Modal, Provider, PaperProvider } from 'reac
 import { StatusBar } from "expo-status-bar";
 import { Text, View } from "react-native";
 import { auth } from "firebase/Config";
+import { ScrollView } from "react-native-gesture-handler";
 import {
     signInWithEmailAndPassword,
     signInWithPopup,
@@ -51,46 +52,48 @@ export default function SignIn({ navigation }: { navigation: any }) {
     }
 
     return (
-        <MainContainer>
-            <SPlus />
-			<BigText style={{marginBottom: 10}}>Faça seu Login</BigText>
-            <GoogleModal navigation={undefined} />
-            <StyledTextInput
-                label="E-mail"
-                icon="email-variant"
-                value={email}
-                onChangeText={setEmail}
-                placeholder="seu@email.com"
-                keyboardType="email-address"
-                style={{ marginBottom: 20 }}
-            />
-            <StyledTextInput
-                label="Senha"
-                icon="lock-open"
-                value={password}
-                onChangeText={setPassword}
-                placeholder="Sua Senha"
-                isPassword
-                style={{ marginBottom: 5 }}
-            />
-            <FakeButton
-                style={{ backgroundColor: white, marginBottom: 5 }}
-                onPress={() => navigation.navigate("PasswordForget")}
-            >
-                Esqueci minha senha
-            </FakeButton>
-            <RegularButton style={{ marginBottom: 10 }} onPress={() => login()}>
-                Logar
-            </RegularButton>
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+            <MainContainer>
+                <SPlus />
+                <BigText>Faça seu Login</BigText>
+                <GoogleModal navigation={undefined}/>
+                <StyledTextInput
+                    label="E-mail"
+                    icon="email-variant"
+                    value={email}
+                    onChangeText={setEmail}
+                    placeholder="seu@email.com"
+                    keyboardType="email-address"
+                    style={{ marginBottom: 20 }}
+                />
+                <StyledTextInput
+                    label="Senha"
+                    icon="lock-open"
+                    value={password}
+                    onChangeText={setPassword}
+                    placeholder="Sua Senha"
+                    isPassword
+                    style={{ marginBottom: 5 }}
+                />
+                <FakeButton
+                    style={{ backgroundColor: white, marginBottom: 5 }}
+                    onPress={() => navigation.navigate("PasswordForget")}
+                >
+                    Esqueci minha senha
+                </FakeButton>
+                <RegularButton style={{ marginBottom: 10 }} onPress={() => login()}>
+                    Logar
+                </RegularButton>
 
-            <RegularButton
-                style={{ marginBottom: 20 }}
-                onPress={() => navigation.navigate("Cadastro")}
-            >
-                Faça Cadastro
-            </RegularButton>
+                <RegularButton
+                    style={{ marginBottom: 20 }}
+                    onPress={() => navigation.navigate("Cadastro")}
+                >
+                    Faça Cadastro
+                </RegularButton>
 
-            <StatusBar style="auto" />
-        </MainContainer>
+                <StatusBar style="auto" />
+            </MainContainer>
+        </ScrollView>
     );
 }

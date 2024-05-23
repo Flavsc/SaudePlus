@@ -1,4 +1,4 @@
-import SPlus from "@assets/images/sPlus";
+import SPlus from "@assets/images/YELogo";
 import CameraT from "components/Camera/Camera";
 import MainContainer from "components/containers/MainContainer";
 import SmallContainer from "components/containers/SmallContainer";

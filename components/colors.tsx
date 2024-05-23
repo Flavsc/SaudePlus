@@ -4,7 +4,7 @@ export const colors = {
     accent: "#443331",
     comp: "#8CffC6",
     black: "#000000",
-    white: "#FFFFFF",
+    white: "#f9f9f9",
     gray: "#626F68",
     red_gray: "#3C282A",
     inputback: "#E4FFF7"
