@@ -15,6 +15,7 @@ import InitialPage from "@screens/InitialPage";
 import MainPage from "@screens/MainPage";
 import Map from "@screens/Map";
 import MedicalAppoitment from "@screens/MedicalAppoitment";
+import MedicinePage from "@screens/MedicinePage";
 import NewEmail from "@screens/NewEmail";
 import NewPassword from "@screens/NewPassword";
 import PageForCodeDigit from "@screens/PageForCodeDigit";
@@ -23,6 +24,7 @@ import SignIn from "@screens/SignIn";
 import SignUp from "@screens/SignUp";
 import SupportContact from "@screens/SupportContact";
 import TGT from "@screens/TextGridTest";
+import GoogleModal from "components/Modal/GoogleModal";
 
 const Stack = createStackNavigator();
 
@@ -41,6 +43,7 @@ export default function Nav() {
                 <Stack.Screen name="NewEmail" component={NewEmail} />
                 <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
                 <Stack.Screen name="Exames" component={HistoricExams} />
+                <Stack.Screen name="MedicinePage" component={MedicinePage} />
                 <Stack.Screen name="Calendario" component={Calendar} />
                 <Stack.Screen
                     name="Hemograma"
@@ -72,6 +75,7 @@ export default function Nav() {
                     component={SupportContact}
                 />
                 <Stack.Screen name="Sobre Nos" component={AboutUs} />
+                <Stack.Screen name="GoogleModal" component={GoogleModal} />
             </Stack.Navigator>
         </NavigationContainer>
     );

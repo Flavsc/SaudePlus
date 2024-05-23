@@ -6,7 +6,9 @@ import { colors } from "components/colors";
 import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
+import { IconButton, Button, Portal, Modal, Provider, PaperProvider } from 'react-native-paper';
 import { StatusBar } from "expo-status-bar";
+import { Text, View } from "react-native";
 import { auth } from "firebase/Config";
 import {
     signInWithEmailAndPassword,
@@ -14,14 +16,19 @@ import {
     GoogleAuthProvider
 } from "firebase/auth";
 import { useState } from "react";
-import { Button } from "react-native-paper";
+import GoogleModal from "components/Modal/GoogleModal";
+
 const { primary, accent, white } = colors;
 export var globalEmail: string;
+
 export default function SignIn({ navigation }: { navigation: any }) {
+
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+    
     globalEmail = email;
+
     async function login(): Promise<void> {
         try {
             if (email && password == null) {
@@ -43,21 +50,11 @@ export default function SignIn({ navigation }: { navigation: any }) {
         }
     }
 
-    async function loginWithGoogle() {
-        const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                const user = result.user;
-                alert("Usuário autenticado com Google");
-            })
-            .catch((error) => {
-                alert("Erro ao fazer login com Google");
-            });
-    }
-
     return (
         <MainContainer>
             <SPlus />
+			<BigText style={{marginBottom: 10}}>Faça seu Login</BigText>
+            <GoogleModal navigation={undefined} />
             <StyledTextInput
                 label="E-mail"
                 icon="email-variant"
