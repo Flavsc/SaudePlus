@@ -5,6 +5,8 @@ import { StyleSheet, View } from "react-native";
 import MapView from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 
+const KeyApi = process.env.EXPO_PUBLIC_GOOGLEMAPSAPIKEY;
+
 export default function Map() {
     const [location, setLocation] = useState<Location.LocationObject | null>(
         null
@@ -30,6 +32,12 @@ export default function Map() {
         longitude: -46.57953547841175
     };
 
+    const KeyApi = process.env.EXPO_PUBLIC_GOOGLEMAPSAPIKEY;
+
+    if(!KeyApi){
+        throw new Error("Chave da API não encontrada");
+    }
+
     return (
         <View style={styles.container}>
             <MapView
@@ -46,7 +54,7 @@ export default function Map() {
                 <MapViewDirections
                     origin={location?.coords}
                     destination={DESTINATION}
-                    apikey="AIzaSyDf0YzOeWG_Nd7nZ84Js71zskONgzQPEPc"
+                    apikey={KeyApi}
                     strokeWidth={3}
                     strokeColor="blue"
                 />
