@@ -1,3 +1,4 @@
+import GPT from "Chat/ChatGPT";
 import RegularButton from "components/Buttons/RegularButton";
 import MainContainer from "components/containers/MainContainer";
 import SmallContainer from "components/containers/SmallContainer";
@@ -35,6 +36,12 @@ export default function HistoricExams({ navigation }: { navigation: any }) {
                     onPress={() => navigation.navigate("TGP")}
                 >
                     TGP
+                </RegularButton>
+                <RegularButton
+                    style={{ marginBottom: 20 }}
+                    onPress={() => GPT()}
+                >
+                    GPT
                 </RegularButton>
             </SmallContainer>
         </MainContainer>
