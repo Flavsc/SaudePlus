@@ -14,12 +14,19 @@ import { getFunctions, httpsCallable } from "firebase/functions";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const keyApiFire = process.env.EXPO_PUBLIC_API_FIREBASE
+const bucket = process.env.EXPO_PUBLIC_BUCKET_FIREBASE
+const urlFirebase = process.env.EXPO_PUBLIC_URL_FIREBASE
+const authDomain = process.env.EXPO_PUBLIC_AUTH_DOMAIN
+
+
 const firebaseConfig = {
-    apiKey: "AIzaSyAAxq6loMdKZ8vq2fDm0E2zm-p-yETE9HI",
-    authDomain: "saudeplus-e2d85.firebaseapp.com",
-    databaseURL: "https://saudeplus-e2d85-default-rtdb.firebaseio.com",
+    apiKey: keyApiFire,
+    authDomain: authDomain,
+    databaseURL: urlFirebase,
     projectId: "saudeplus-e2d85",
-    storageBucket: "saudeplus-e2d85.appspot.com",
+    storageBucket: bucket,
     messagingSenderId: "411561318029",
     appId: "1:411561318029:web:3c713a65a30134ad5b74c4",
     measurementId: "G-KG20TW1DLV"
