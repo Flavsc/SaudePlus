@@ -78,7 +78,7 @@ export default function SignIn({ navigation }: { navigation: any }) {
                     style={{ backgroundColor: white, marginBottom: 5 }}
                     onPress={() => navigation.navigate("PasswordForget")}
                 >
-                    Esqueci minha senha
+                    <Text style={{ color: 'darkblue', textDecorationLine: 'underline' }}>Esqueci minha senha</Text>
                 </FakeButton>
                 <RegularButton style={{ marginBottom: 10 }} onPress={() => login()}>
                     Logar

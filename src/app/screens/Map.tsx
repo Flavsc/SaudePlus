@@ -30,6 +30,12 @@ export default function Map() {
         longitude: -46.57953547841175
     };
 
+    const ApiKeyMaps = process.env.EXPO_PUBLIC_API_MAPS;
+
+    if(!ApiKeyMaps){
+        throw new Error('Api não encontrada')
+    }
+
     return (
         <View style={styles.container}>
             <MapView
@@ -46,7 +52,7 @@ export default function Map() {
                 <MapViewDirections
                     origin={location?.coords}
                     destination={DESTINATION}
-                    apikey="AIzaSyDf0YzOeWG_Nd7nZ84Js71zskONgzQPEPc"
+                    apikey={ApiKeyMaps}
                     strokeWidth={3}
                     strokeColor="blue"
                 />
