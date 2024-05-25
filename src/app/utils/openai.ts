@@ -12,7 +12,16 @@ export async function GPT() {
     messages: [
       {
         role: "user",
-        content: "Give me the name of the laboratory tests along with their Reference Range"
+        content: [
+          { type: "text", text: "Give me the name of the laboratory tests along with their reference range described in this framework laboratory test: Place laboratory tests here, reference range: reference ranges here, in the image provided"},
+          {
+            type: "image_url",
+            image_url: {
+              "url": "https://i.ibb.co/6trJPdk/exame.png",
+              detail: "high"
+            },
+          },
+        ],
       },
     ],
   });
