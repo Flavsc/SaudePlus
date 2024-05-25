@@ -4,46 +4,49 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import GridView from "components/Grids/GridView";
 import MainContainer from "components/containers/MainContainer";
 import BigText from "components/texts/BigText";
-import React from "react";
-import { SafeAreaView, StyleSheet, View, Text} from "react-native";
-import { Button, Portal, Provider} from "react-native-paper";
+import React,  { useState } from "react";
+import { SafeAreaView, StyleSheet, View, Text,} from "react-native";
+import { Button, TextInput} from "react-native-paper";
+import { Overlay, Icon } from '@rneui/themed';
 
 export default function MainPage({ navigation }: { navigation: any }) {
-    const [value, setValue] = React.useState("");
+
+    const [visible, setVisible] = useState(false);
+      
+    const toggleOverlay = () => {
+        setVisible(!visible);
+    };
+
+    const [text, setText] = React.useState('');
+
     return (
         <MainContainer>
-            <BigText style={{ marginTop: 10 }}>Remédios Salvos</BigText>
+            <BigText style={{position:'absolute',  top: 30}}>Remédios Salvos</BigText>             
+                <Button 
+                    mode="contained"
+                    style={{ backgroundColor: "#739986", position: 'absolute', bottom: 16, right: 15}}
+                    onPress={toggleOverlay}                                                                          
+                >
+                    Press Me
+                </Button>
+                <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
+                    <View style={{ width: 350, height: 350, justifyContent: 'center', alignItems: 'center' }}>
+                        <Text style={{position:'absolute',  top: 30}}>
+                            Insira as informações do seu Remedio
+                        </Text>
+                        <TextInput
+                            mode="outlined"
+                            
+                            label="Digite Nome do Remedio Aqui"
+                            placeholder="Nome do Remedio"
+                            
+                            style={{width:300}}
+                        />
+                    </View>    
+                </Overlay>                   
+                
 
-            <Provider>
-                <SafeAreaView style={styles.container}>
-                    <View style={styles.buttonContainer}>
-                        <Button 
-                            mode="contained"
-                            style={{ backgroundColor: "#739986" }}
-                            onPress={() => 
-                                <Portal>
-                                    <Text>This is rendered at a different place</Text>
-                                </Portal>}
-                        >
-                            Press Me
-                        </Button>
-                    </View>
-                </SafeAreaView>
-            </Provider>
         </MainContainer>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'flex-end', // Alinha o botão na parte inferior
-      alignItems: 'flex-end', // Alinha o botão na direita
-      
-    },
-    buttonContainer: {
-      position: 'absolute',
-      bottom: 16,
-      left: 70,
-    },
-  });
