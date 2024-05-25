@@ -44,7 +44,6 @@ export default function Nav() {
                 <Stack.Screen name="DeleteEmail" component={DeleteEmail} />
                 <Stack.Screen name="Exames" component={HistoricExams} />
                 <Stack.Screen name="MedicinePage" component={MedicinePage} />
-                <Stack.Screen name="Calendario" component={Calendar} />
                 <Stack.Screen
                     name="Hemograma"
                     component={HistoricExams_Hemogram}
