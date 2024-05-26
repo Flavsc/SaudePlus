@@ -13,11 +13,11 @@ export async function GPT() {
       {
         role: "user",
         content: [
-          { type: "text", text: "Give me the name of the laboratory tests along with their reference range described in this framework laboratory test: Place laboratory tests here, reference range: reference ranges here, in the image provided"},
+          { type: "text", text: "Give me the name of the laboratory tests along with their reference range for each line read in this structure, testName : referenceRange"},
           {
             type: "image_url",
             image_url: {
-              "url": "https://i.ibb.co/6trJPdk/exame.png",
+              "url": "https://i.ibb.co/pf6f2dm/Exames-1.png",
               detail: "high"
             },
           },
