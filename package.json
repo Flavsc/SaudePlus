@@ -25,6 +25,7 @@
     "expo-font": "~12.0.5",
     "expo-image-picker": "~15.0.5",
     "expo-location": "~17.0.1",
+    "expo-notifications": "~0.28.3",
     "expo-status-bar": "~1.12.1",
     "firebase": "^10.12.0",
     "i": "^0.3.7",
@@ -50,6 +51,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.45",
+    "@types/react-native": "^0.73.0",
     "@types/react-native-calendar-picker": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "eslint": "^8.57.0",
