@@ -1,49 +1,134 @@
-import SPlus from "@assets/images/YELogo";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import GridView from "components/Grids/GridView";
-import MainContainer from "components/containers/MainContainer";
-import BigText from "components/texts/BigText";
-import React from "react";
-import { SafeAreaView, StyleSheet, View, Text} from "react-native";
-import { Button, Portal, Provider} from "react-native-paper";
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, FlatList, StyleSheet, ListRenderItemInfo } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
-export default function MainPage({ navigation }: { navigation: any }) {
-    const [value, setValue] = React.useState("");
-    return (
-        <MainContainer>
-            <BigText style={{ marginTop: 10 }}>Remédios Salvos</BigText>
-
-            <Provider>
-                <SafeAreaView style={styles.container}>
-                    <View style={styles.buttonContainer}>
-                        <Button 
-                            mode="contained"
-                            style={{ backgroundColor: "#739986" }}
-                            onPress={() => 
-                                <Portal>
-                                    <Text>This is rendered at a different place</Text>
-                                </Portal>}
-                        >
-                            Press Me
-                        </Button>
-                    </View>
-                </SafeAreaView>
-            </Provider>
-        </MainContainer>
-    );
+// Definição dos tipos necessários
+interface Medication {
+  id: string;
+  name: string;
+  time: Date;
 }
 
+// Componente de Formulário de Medicamentos
+const MedicationForm: React.FC<{ onAddMedication: (medication: Medication) => void }> = ({ onAddMedication }) => {
+  const [name, setName] = useState('');
+  const [time, setTime] = useState(new Date());
+  const [showPicker, setShowPicker] = useState(false);
+
+  const handleAddMedication = () => {
+    if (name) {
+      onAddMedication({ id: Date.now().toString(), name, time });
+      setName('');
+    }
+  };
+
+  return (
+    <View style={styles.formContainer}>
+      <TextInput
+        style={styles.input}
+        placeholder="Nome do medicamento"
+        value={name}
+        onChangeText={setName}
+      />
+      <Button title="Escolher Horário" onPress={() => setShowPicker(true)} color={styles.button.color} />
+      {showPicker && (
+        <DateTimePicker
+          value={time}
+          mode="time"
+          display="default"
+          onChange={(event, selectedDate) => {
+            const currentDate = selectedDate || time;
+            setShowPicker(false);
+            setTime(currentDate);
+          }}
+        />
+      )}
+      <Button title="Adicionar Medicamento" onPress={handleAddMedication} color={styles.button.color} />
+    </View>
+  );
+};
+
+// Componente de Lista de Medicamentos
+const MedicationList: React.FC<{ medications: Medication[] }> = ({ medications }) => {
+  const renderItem = ({ item }: ListRenderItemInfo<Medication>) => (
+    <View style={styles.item}>
+      <Text style={styles.itemText}>{item.name}</Text>
+      <Text style={styles.itemText}>{item.time.toLocaleTimeString()}</Text>
+    </View>
+  );
+
+  return (
+    <FlatList
+      data={medications}
+      keyExtractor={(item) => item.id}
+      renderItem={renderItem}
+    />
+  );
+};
+
+// Tela Principal
+const HomeScreen: React.FC = () => {
+  const [medications, setMedications] = useState<Medication[]>([]);
+
+  const handleAddMedication = (medication: Medication) => {
+    setMedications((current) => [...current, medication]);
+  };
+
+  return (
+    <View style={styles.container}>
+      <MedicationForm onAddMedication={handleAddMedication} />
+      <MedicationList medications={medications} />
+    </View>
+  );
+};
+
+// Componente Principal do App
+export default function MedicinePage() {
+  return (
+    <View style={styles.appContainer}>
+      <HomeScreen />
+    </View>
+  );
+}
+
+// Estilos
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'flex-end', // Alinha o botão na parte inferior
-      alignItems: 'flex-end', // Alinha o botão na direita
-      
-    },
-    buttonContainer: {
-      position: 'absolute',
-      bottom: 16,
-      left: 70,
-    },
-  });
+  appContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+  },
+  container: {
+    flex: 1,
+    padding: 20,
+    justifyContent: 'center',
+  },
+  formContainer: {
+    padding: 20,
+    backgroundColor: '#475950',
+    borderRadius: 10,
+    marginBottom: 20,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#739986',
+    padding: 10,
+    marginBottom: 10,
+    borderRadius: 5,
+    color: '#fff',
+  },
+  button: {
+    color: '#739986',
+  },
+  item: {
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#739986',
+    backgroundColor: '#475950',
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+  itemText: {
+    color: '#fff',
+  },
+});
