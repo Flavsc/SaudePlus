@@ -5,6 +5,7 @@ import Calendar from "@screens/Calendar";
 import CameraTest from "@screens/CameraTest";
 import Configuration from "@screens/Configuration";
 import DeleteEmail from "@screens/DeleteEmail";
+import ExamsUploader from "@screens/ExamsUploader";
 import HistoricExams from "@screens/HistoricExams";
 import HistoricExams_Cholesterol from "@screens/HistoricExams_Cholesterol";
 import HistoricExams_Glicose from "@screens/HistoricExams_Glicose";
@@ -20,6 +21,7 @@ import NewEmail from "@screens/NewEmail";
 import NewPassword from "@screens/NewPassword";
 import PageForCodeDigit from "@screens/PageForCodeDigit";
 import PasswordForget from "@screens/PasswordForget";
+import PDFUploader from "@screens/PDFupload";
 import SignIn from "@screens/SignIn";
 import SignUp from "@screens/SignUp";
 import SupportContact from "@screens/SupportContact";
@@ -75,6 +77,9 @@ export default function Nav() {
                 />
                 <Stack.Screen name="Sobre Nos" component={AboutUs} />
                 <Stack.Screen name="GoogleModal" component={GoogleModal} />
+                <Stack.Screen name="ExamsUploader" component={ExamsUploader} />
+                <Stack.Screen name="PDFUploader" component={PDFUploader} />
+
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -21,7 +21,7 @@ export default function MainPage({ navigation }: { navigation: any }) {
             <SmallContainer style={{ flexDirection: "row", flexWrap: "wrap" }}>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => navigation.navigate("Exames")}
+                    onPress={() => navigation.navigate("ExamsUploader")}
                 >
                     Exames
                 </RegularButton>

@@ -4,10 +4,13 @@ import { initializeApp } from "firebase/app";
 import {
     getAuth,
     GoogleAuthProvider,
+    setPersistence,
     signInWithCredential,
     signInWithPopup
 } from "firebase/auth";
 import { getFunctions, httpsCallable } from "firebase/functions";
+import {initializeAuth } from 'firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
