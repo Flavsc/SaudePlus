@@ -2,7 +2,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import AboutUs from "@screens/AboutUs";
 import Calendar from "@screens/Calendar";
-import CameraTest from "@screens/CameraTest";
+import Camera from "@screens/Camera";
+import CameraTest from "@screens/Camera";
 import Configuration from "@screens/Configuration";
 import DeleteEmail from "@screens/DeleteEmail";
 import ExamsUploader from "@screens/ExamsUploader";
@@ -79,6 +80,7 @@ export default function Nav() {
                 <Stack.Screen name="GoogleModal" component={GoogleModal} />
                 <Stack.Screen name="ExamsUploader" component={ExamsUploader} />
                 <Stack.Screen name="PDFUploader" component={PDFUploader} />
+                <Stack.Screen name="Camera" component={Camera} />
 
             </Stack.Navigator>
         </NavigationContainer>
