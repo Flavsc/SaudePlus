@@ -225,11 +225,11 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     borderRadius: 5,
-    color: '#ffffff',
-    backgroundColor: '#475950',
+    color: '#443331',
+    backgroundColor: '#fff',
   },
   button: {
-    color: '#739986',
+    color: '#fff',
   },
   item: {
     padding: 20,

@@ -8,7 +8,7 @@ import RegularText from "../texts/RegularText";
 const { primary, accent, white } = colors;
 
 const ButtonView = styled.TouchableOpacity`
-    background-color: ${accent};
+    background-color: ${white};
     width: 100%;
     height: 60px;
     padding: 15px;
