@@ -44,7 +44,7 @@ const MedicationForm: React.FC<{ onAddMedication: (medication: Medication) => vo
           }}
         />
       )}
-      <Button title="Adicionar Medicamento" onPress={handleAddMedication} color={styles.button.color} />
+      <Button title="Adicionar Medicamento" onPress={handleAddMedication} color={'red'} />
     </View>
   );
 };
@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   button: {
-    color: '#fff',
+    color: 'blue',
   },
   item: {
     padding: 20,
