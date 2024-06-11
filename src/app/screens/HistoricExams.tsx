@@ -3,6 +3,7 @@ import { View, Text, Button, ScrollView, StyleSheet } from 'react-native';
 import { GPT } from '../utils/openai'; 
 import BigText from 'components/texts/BigText';
 import RegularButton from 'components/Buttons/RegularButton';
+import RegularText from 'components/texts/RegularText';
 
 export default function HistoricExams({ navigation }: { navigation: any }) {
     const [examData, setExamData] = useState<any[]>([]);
@@ -31,7 +32,9 @@ export default function HistoricExams({ navigation }: { navigation: any }) {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.smallContainer}>
-                <BigText>Clique abaixo para mostrar os resultados!</BigText>
+                <RegularText>
+                    Clique em "Mostrar os resultados" para ver os resultados dos seus exames.
+                </RegularText>
                 <RegularButton onPress={fetchGPTData}>Mostrar os resultados</RegularButton>
             </View>
             <ScrollView style={styles.scrollContainer}>
