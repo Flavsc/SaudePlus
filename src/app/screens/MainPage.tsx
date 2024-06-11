@@ -27,12 +27,6 @@ export default function MainPage({ navigation }: { navigation: any }) {
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => navigation.navigate("ExamsUploader")}
-                >
-                    Enviar Exame
-                </RegularButton>
-                <RegularButton
-                    style={{ width: 150, height: 100, margin: 2 }}
                     onPress={() => navigation.navigate("Mapa")}
                 >
                     Mapa
@@ -51,15 +45,15 @@ export default function MainPage({ navigation }: { navigation: any }) {
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}
+                    onPress={() => navigation.navigate("Sobre Nos")}
+                >
+                    Enviar Exame
+                </RegularButton>
+                <RegularButton
+                    style={{ width: 150, height: 100, margin: 2 }}
                     onPress={() => navigation.navigate("Configuration")}
                 >
                     Configuração
-                </RegularButton>
-                <RegularButton
-                    style={{ margin: 2, width: "93%" }}
-                    onPress={() => navigation.navigate("Sobre Nos")}
-                >
-                    Sobre nós
                 </RegularButton>
             </SmallContainer>
         </MainContainer>
