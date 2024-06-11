@@ -1,10 +1,9 @@
 import SPlus from "@assets/images/YELogo";
-import CameraT from "components/Camera/Camera";
 import MainContainer from "components/containers/MainContainer";
 import SmallContainer from "components/containers/SmallContainer";
 import BigText from "components/texts/BigText";
 import RegularText from "components/texts/RegularText";
-import React from "react";
+import Camera from "components/Camera/Camera";
 
 export default function CameraTest() {
     return (
@@ -14,9 +13,7 @@ export default function CameraTest() {
             <RegularText style={{ marginBottom: 20 }}>
                 Gestão Inteligente de Saúde
             </RegularText>
-            <SmallContainer>
-                <CameraT />
-            </SmallContainer>
+                <Camera/>
         </MainContainer>
     );
 }

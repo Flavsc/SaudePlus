@@ -3,6 +3,9 @@ import { View, Button, Text } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import RegularButton from 'components/Buttons/RegularButton';
 import RegularText from 'components/texts/RegularText';
+import MainContainer from 'components/containers/MainContainer';
+import SmallContainer from 'components/containers/SmallContainer';
+
 interface SelectedFile {
     uri: string;
     name: string;
@@ -24,19 +27,18 @@ export default function PDFUploader({ navigation }: { navigation: any }) {
     };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <RegularButton onPress={selectFile}>Selecionar Arquivo</RegularButton>
+    <MainContainer>
+      <RegularButton onPress={selectFile} style={{marginBottom: 10}}>Selecionar Arquivo</RegularButton>
       {selectedFile ? (
-        <View style={{ marginTop: 20 }}>
+        <SmallContainer>
           <RegularText>Arquivo Selecionado:</RegularText>
           <RegularText>{selectedFile.name}</RegularText>
           <RegularText>Tipo: {selectedFile.type}</RegularText>
           <RegularText>Tamanho: {selectedFile.size} bytes</RegularText>
-        </View>
+        </SmallContainer>
       ) : (
         <Text>Nenhum arquivo selecionado</Text>
       )}
-      <RegularButton onPress={navigation.navigate("Exames")}>Ver os resultados</RegularButton>
-    </View>
+    </MainContainer>
   );
 };

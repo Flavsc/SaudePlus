@@ -15,21 +15,14 @@ const { primary, accent, white } = colors;
 export default function ExamsUploader({ navigation }: { navigation: any }){
     return(
         <MainContainer>
-
-            <BigText>Escolha um modo:</BigText>
-            <SmallContainer style={{ flexDirection: "column", flexWrap: "wrap" }}>
-
-                <RegularButton
-                    style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => navigation.navigate("ExamsUploader")}
-                >
+            <BigText>
+                Escolha um modo:
+            </BigText>
+            <SmallContainer style={{ flexDirection: "row", flexWrap: "wrap", margin: 10}}>
+                <RegularButton style={{height: 100, width: 120,  margin: 10}} onPress={() => navigation.navigate("CameraTest")}>
                     Enviar com camera
                 </RegularButton>
-                <BigText style={{marginBottom: 50, marginTop: 50}}>OU</BigText>
-                <RegularButton
-                    style={{ width: 150, height: 100, margin: 2 }}
-                    onPress={() => navigation.navigate("PDFUploader")}
-                >
+                <RegularButton style={{height: 100, width: 120,  margin: 10}} onPress={() => navigation.navigate("PDFUploader")}>
                     Enviar em PDF
                 </RegularButton>
             </SmallContainer>
