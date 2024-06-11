@@ -25,10 +25,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <CameraView style={styles.camera} facing={facing}>
+      <CameraView style={styles.camera}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
-            <Text style={styles.text}>Flip Camera</Text>
           </TouchableOpacity>
         </View>
       </CameraView>
@@ -43,6 +42,7 @@ const styles = StyleSheet.create({
   },
   camera: {
     flex: 1,
+    aspectRatio: 2 / 3,
   },
   buttonContainer: {
     flex: 1,

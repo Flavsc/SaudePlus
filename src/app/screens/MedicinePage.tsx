@@ -31,6 +31,7 @@ const MedicationForm: React.FC<{ onAddMedication: (medication: Medication) => vo
         value={name}
         onChangeText={setName}
       />
+      <Button title="Adicionar Medicamento" onPress={handleAddMedication} color={'green'} />
       <Button title="Escolher Horário" onPress={() => setShowPicker(true)} color={styles.button.color} />
       {showPicker && (
         <DateTimePicker
@@ -44,7 +45,6 @@ const MedicationForm: React.FC<{ onAddMedication: (medication: Medication) => vo
           }}
         />
       )}
-      <Button title="Adicionar Medicamento" onPress={handleAddMedication} color={'red'} />
     </View>
   );
 };
@@ -169,8 +169,8 @@ const HomeScreen: React.FC = () => {
                 }}
               />
             )}
-            <Button title="Confirmar" onPress={confirmEditMedication} color={styles.button.color} />
-            <Button title="Cancelar" onPress={() => setEditModalVisible(false)} color={styles.button.color} />
+            <Button title="Confirmar" onPress={confirmEditMedication} color={'green'} />
+            <Button title="Cancelar" onPress={() => setEditModalVisible(false)} color={'red'} />
           </View>
         </View>
       </Modal>
@@ -182,7 +182,7 @@ const HomeScreen: React.FC = () => {
             <Text style={styles.modalMessage}>
               Tem certeza de que deseja excluir o medicamento "{selectedMedication?.name}"?
             </Text>
-            <Button title="Confirmar" onPress={confirmDeleteMedication} color={styles.button.color} />
+            <Button title="Confirmar" onPress={confirmDeleteMedication} color={'red'} />
             <Button title="Cancelar" onPress={() => setDeleteModalVisible(false)} color={styles.button.color} />
           </View>
         </View>

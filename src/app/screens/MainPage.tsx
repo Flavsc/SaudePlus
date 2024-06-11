@@ -47,7 +47,7 @@ export default function MainPage({ navigation }: { navigation: any }) {
                     style={{ width: 150, height: 100, margin: 2 }}
                     onPress={() => navigation.navigate("Sobre Nos")}
                 >
-                    Enviar Exame
+                    Sobre Nós
                 </RegularButton>
                 <RegularButton
                     style={{ width: 150, height: 100, margin: 2 }}

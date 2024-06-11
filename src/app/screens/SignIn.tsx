@@ -75,15 +75,14 @@ export default function SignIn({ navigation }: { navigation: any }) {
                     style={{ marginBottom: 5 }}
                 />
                 <FakeButton
-                    style={{ backgroundColor: white, marginBottom: 5 }}
+                    style={{ backgroundColor: white, marginBottom: 5}}
                     onPress={() => navigation.navigate("PasswordForget")}
                 >
-                    Esqueci minha senha
+                    <Text style={{ color: 'blue', textDecorationLine: 'underline' }}>Esqueci minha senha</Text>
                 </FakeButton>
                 <RegularButton style={{ marginBottom: 10 }} onPress={() => login()}>
                     Logar
                 </RegularButton>
-
                 <RegularButton
                     style={{ marginBottom: 20 }}
                     onPress={() => navigation.navigate("Cadastro")}

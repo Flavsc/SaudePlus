@@ -5,6 +5,7 @@ import RegularButton from 'components/Buttons/RegularButton';
 import RegularText from 'components/texts/RegularText';
 import MainContainer from 'components/containers/MainContainer';
 import SmallContainer from 'components/containers/SmallContainer';
+import BigText from 'components/texts/BigText';
 
 interface SelectedFile {
     uri: string;
@@ -28,6 +29,9 @@ export default function PDFUploader({ navigation }: { navigation: any }) {
 
   return (
     <MainContainer>
+      <BigText style={{marginBottom: 10, textDecorationLine: 'underline'}}>
+        Selecione o exame
+      </BigText>
       <RegularButton onPress={selectFile} style={{marginBottom: 10}}>Selecionar Arquivo</RegularButton>
       {selectedFile ? (
         <SmallContainer>
@@ -39,6 +43,9 @@ export default function PDFUploader({ navigation }: { navigation: any }) {
       ) : (
         <Text>Nenhum arquivo selecionado</Text>
       )}
+      <RegularButton style={{position: "absolute", bottom: 20, right: 10, width: 100}} onPress={() => navigation.navigate("Exames")}>
+          Enviar
+      </RegularButton>
     </MainContainer>
   );
 };
