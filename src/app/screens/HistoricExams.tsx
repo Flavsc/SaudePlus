@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, Button, ScrollView, StyleSheet } from 'react-native';
 import { GPT } from '../utils/openai'; 
+import BigText from 'components/texts/BigText';
+import RegularButton from 'components/Buttons/RegularButton';
 
 export default function HistoricExams({ navigation }: { navigation: any }) {
     const [examData, setExamData] = useState<any[]>([]);
@@ -29,7 +31,8 @@ export default function HistoricExams({ navigation }: { navigation: any }) {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.smallContainer}>
-                <Button title="GPT" onPress={fetchGPTData} />
+                <BigText>Clique abaixo para mostrar os resultados!</BigText>
+                <RegularButton onPress={fetchGPTData}>Mostrar os resultados</RegularButton>
             </View>
             <ScrollView style={styles.scrollContainer}>
                 {examData.map((item, index) => (

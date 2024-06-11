@@ -1,3 +1,4 @@
+import RegularButton from "components/Buttons/RegularButton";
 import { Camera, CameraType } from "expo-camera";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -36,6 +37,7 @@ export default function CameraT() {
                         onPress={toggleCameraType}
                     >
                         <Text style={styles.text}>Flip Camera</Text>
+                        <RegularButton onPress={() => {}}></RegularButton>
                     </TouchableOpacity>
                 </View>
             </Camera>
