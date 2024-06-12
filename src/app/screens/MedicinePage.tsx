@@ -31,8 +31,8 @@ const MedicationForm: React.FC<{ onAddMedication: (medication: Medication) => vo
         value={name}
         onChangeText={setName}
       />
-      <Button title="Adicionar Medicamento" onPress={handleAddMedication} color={'green'} />
-      <Button title="Escolher Horário" onPress={() => setShowPicker(true)} color={styles.button.color} />
+      <Button title="Adicionar Medicamento" onPress={handleAddMedication} color={'white'} />
+      <Button title="Escolher Horário" onPress={() => setShowPicker(true)} color={'white'} />
       {showPicker && (
         <DateTimePicker
           value={time}
