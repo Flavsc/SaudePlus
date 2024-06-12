@@ -42,7 +42,6 @@ return (
         <RegularText style={{fontSize: 20}}>
                 Selecione a data e horário da consulta
         </RegularText>
-        <Text>-----------------------------------------------------------------------</Text>
         <SmallContainer style={{flexDirection: "row", flexWrap: "wrap", gap: 10, marginVertical: 20}}>
             <RegularButton onPress={() => showMode('date')} style={{width: 100}}> 
                 Data
