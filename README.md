@@ -58,14 +58,6 @@
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/138916786?v=4" width="200px;" alt="FotoTerencio"/><br>
-        <sub>
-          <p><b><i>Terencio:</i></b> <a href="https://github.com/terenciolc"><i>terenciolc</i></a></p>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
         <img src="https://avatars.githubusercontent.com/u/133230167?v=4" width="100px;" alt="era uma foto daora"/><br>
         <sub>
           <p><b><i>Gustavo Ara:</i></b> <a href="https://github.com/GuAra05"><i>GuAra05</i></a></p>
